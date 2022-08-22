@@ -16,3 +16,86 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.player1 {
+  /* width: 100px;
+  height: 100px;
+  background-color: red; */
+  position: relative;
+  animation-duration: 2s;
+  animation: wiggle 2s linear, example 2s, defeat .25s ; 
+}
+ 
+/* @keyframes example {
+  0%   { left:0px; top:0px;}
+  10%  { left:700px; top:0px;}
+} */
+
+/* 
+/* animation with colors  */
+/* @keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  10%  {background-color:yellow; left:200px; top:0px;}
+} */
+ /* @keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}   */
+
+/* @keyframes defeat {
+  0%  { left:700px; top:0px;}
+  5%  { left:665px; top:0px;}
+  10% { left:630px; top:0px;}
+  15% { left:595px; top:0px;}
+  20% { left:560px; top:0px;}
+  25% { left:525px; top:0px;}
+  30% { left:490px; top:0px;}
+  35% { left:455px; top:0px;}
+  40% { left:420px; top:0px;}
+  45% { left:385px; top:0px;}
+  50% { left:350px; top:0px;}
+  55% { left:315px; top:0px;}
+  60% { left:280px; top:0px;}
+  65% { left:245px; top:0px;}
+  70% { left:210px; top:0px;}
+  75% { left:175px; top:0px;}
+  80% { left:140px; top:0px;}
+  85% { left:105px; top:0px;}
+  90% { left:70px; top:0px;}
+  95% { left:35px; top:0px;}
+  100% { left:0; top:0px;}
+} */
+
+ @keyframes defeat {
+  0%  { left:700px; top:0px;
+      transform: rotateZ(0);}
+  10%  { left:630px; top:0px;}
+  20% { left: 560px; top:0px;}
+  30% { left:490px; top:0px;}
+  40% { left:420px; top:0px;}
+  50% { left:350px; top:0px;}
+  60% { left:280px; top:0px;}
+  70% { left:210px; top:0px;}
+  80% { left:140px; top:0px;}
+  90% { left:70px; top:0px;}
+  100% { left:0px; top:0px;}
+} 
