@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+/* font-family: 'Heebo', sans-serif; */
+
 html {
   font-size: 14px;
 }
@@ -5,6 +8,7 @@ html {
 @media (min-width: 768px) {
   html {
     font-size: 16px;
+    font-family: 'Heebo', sans-serif;
   }
 }
 
@@ -15,4 +19,69 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+#header a, a:hover, a:focus, a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
+.aBtn {
+  border-radius: 4px;
+  margin: 4px;
+  padding: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: max-content;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* HOME INDEX */
+
+#loginBtn {
+  background-color: #777777;
+  color: #c0c0c0;
+  box-shadow: 2px 5px #444444;
+}
+
+#packBtn {
+  background-color: #c93e3e;
+  color: #F3F9F9;
+  box-shadow: 2px 5px #444444;
+}
+
+/* ANIMAL INDEX */
+
+.aCard {
+  width: 320px;
+  height: 446px;
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  color: #ebebeb;
+  background-color: #4b2414;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.aCard img {
+  display: block;
+  margin: 0px auto;
+  width: 95%;
+  border-radius: 5px;
+  background-color: #919191;
+  box-shadow: 3px 1px 6px #291010;
+}
+
+.cardName {
+  margin-left: 10px;
+  color: #ebebeb;
+}
+
+.cardHp {
+  float: right;
+  margin-right: 10px;
 }
