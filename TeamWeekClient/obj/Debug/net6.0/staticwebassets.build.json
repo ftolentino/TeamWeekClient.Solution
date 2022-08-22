@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "XW63nEqTR5EyEZJbhjUFtNjnaYLhcgARAsxO6BGx3lM=",
+  "Source": "TeamWeekClient",
+  "BasePath": "_content/TeamWeekClient",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "TeamWeekClient\\wwwroot",
+      "Source": "TeamWeekClient",
+      "ContentRoot": "C:\\Users\\filme\\Desktop\\epicodus\\week-14\\TeamWeekClient.Solution\\TeamWeekClient\\wwwroot\\",
+      "BasePath": "_content/TeamWeekClient",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\filme\\Desktop\\epicodus\\week-14\\TeamWeekClient.Solution\\TeamWeekClient\\wwwroot\\css\\styles.css",
+      "SourceId": "TeamWeekClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\filme\\Desktop\\epicodus\\week-14\\TeamWeekClient.Solution\\TeamWeekClient\\wwwroot\\",
+      "BasePath": "_content/TeamWeekClient",
+      "RelativePath": "css/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\filme\\Desktop\\epicodus\\week-14\\TeamWeekClient.Solution\\TeamWeekClient\\wwwroot\\favicon.ico",
+      "SourceId": "TeamWeekClient",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\filme\\Desktop\\epicodus\\week-14\\TeamWeekClient.Solution\\TeamWeekClient\\wwwroot\\",
+      "BasePath": "_content/TeamWeekClient",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    }
+  ]
+}
