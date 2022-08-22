@@ -20,7 +20,7 @@ namespace TeamWeekClient.Controllers
 
         public IActionResult Index()
         {
-            return RedirectToAction("Index", "Animals");
+            return View();
         }
 
         public IActionResult Privacy()
