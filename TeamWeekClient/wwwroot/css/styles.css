@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
-/* font-family: 'Heebo', sans-serif; */
-
+@import url('../font/PhillySans.otf');
+@font-face {
+  font-family: PhillySans;
+  src: url('../font/PhillySans.otf');
+}
 html {
   font-size: 14px;
 }
@@ -19,6 +22,17 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+div#footer {
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  color:#CCC;
+  background:rgb(6, 46, 46);
+  padding:8px;
+  text-align: center;
 }
 
 /* ANIMATION */
@@ -108,6 +122,18 @@ body {
 #header a, a:hover, a:focus, a:active {
 	text-decoration: none;
 	color: inherit;
+}
+
+.styledHeader{
+  font-family: PhillySans;
+  font-size: 18rem;
+  color: #FF57BE;
+  outline-color: #57FF98;
+  text-shadow: 15px 15px 0 #000,
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .aBtn {
