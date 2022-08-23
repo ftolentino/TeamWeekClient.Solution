@@ -22,34 +22,62 @@ body {
 }
 
 /* ANIMATION */
-.player1 {
+/* .player1 {
   /* width: 100px;
   height: 100px;
   background-color: red; */
+  /* position: relative;
+  animation-duration: 2s;
+  animation: slide 20s, lean 20s, defeat .75s ;  */
+  /* } */ 
+ 
+ .slideleantoright {
   position: relative;
   animation-duration: 2s;
-   animation: slide 2s, lean 2s, defeat .75s ;  
-}
+  animation: slideright 30s, leanright 30s;
+ }
+
+ .slideleantoleft {
+  position:relative;
+  animation-duration: 2s;
+  animation: slideleft 30s, leanleft 10s;
+ }
  
- @keyframes slide {
+ @keyframes slideright {
   0%   { left:0px; top:0px;}
-  20%  { left:450px; top:0px;}
+  10%  { left:450px; top:0px;}
 }
 
-  @keyframes lean {
+@keyframes slideleft {
+  0%   { left:450px; top:0px;}
+  10%  { left:0px; top:0px;}
+}
+
+@keyframes leanright {
     0% { transform: rotateZ(-10deg);}
     5% { transform: rotateZ(-20deg);}
     10% { transform: rotateZ(-30deg);}
     15% { transform: rotateZ(-40deg);}
-    20% {  transform: rotateZ(-50deg);}
-    21% { transform: rotateZ(-40deg); }
-    22% { transform: rotateZ(-30deg); }
-    23% { transform: rotateZ(-20deg); }
-    24% { transform: rotateZ(-10deg); }
-    25% { transform: rotateZ(20deg); }
-
+    20% { transform: rotateZ(-50deg);}
+    21% { transform: rotateZ(-40deg);}
+    22% { transform: rotateZ(-30deg);}
+    23% { transform: rotateZ(-20deg);}
+    24% { transform: rotateZ(-10deg);}
+    25% { transform: rotateZ(20deg);}
   }
 
+  @keyframes leanleft {
+    0% { transform: rotateZ(10deg);}
+    5% { transform: rotateZ(20deg);}
+    10% { transform: rotateZ(30deg);}
+    15% { transform: rotateZ(40deg);}
+    20% { transform: rotateZ(50deg);}
+    21% { transform: rotateZ(40deg);}
+    22% { transform: rotateZ(30deg);}
+    23% { transform: rotateZ(20deg);}
+    24% { transform: rotateZ(10deg);}
+    25% { transform: rotateZ(-20deg);}
+  }
 
 
 
@@ -83,32 +111,66 @@ body {
   }
 }   */
 
-
-
- /* @keyframes defeat {
-  0%  { left:700px; top:0px;
+ 
+ @keyframes defeat {
+  0%  { left:450px; top:0px;
       transform: rotateZ(-108deg);}
-  10%  { left:630px; top:0px;
+  10%  { left:405px; top:0px;
       transform: rotateZ(-216deg);}
-  20% { left: 560px; top:0px;
+  20% { left: 360px; top:0px;
         transform: rotateZ(-324deg);}
-  30% { left:490px; top:0px;
+  30% { left:315px; top:0px;
     transform: rotateZ(-432deg);}
-  40% { left:420px; top:0px;
+  40% { left:270px; top:0px;
     transform: rotateZ(-540deg);}
-  50% { left:350px; top:0px;
+  50% { left:225px; top:0px;
     transform: rotateZ(-648deg);}
-  60% { left:280px; top:0px;
+  60% { left:180px; top:0px;
+    opacity: 100%
     transform: rotateZ(-756deg);}
-  70% { left:210px; top:0px;
+  70% { left:135px; top:0px;
     transform: rotateZ(-864deg);}
-  80% { left:140px; top:0px;
+  80% { left:90px; top:0px;
     transform: rotateZ(-972deg);}
-  90% { left:70px; top:0px;
+  90% { left:45px; top:0px;
     transform: rotateZ(-1080deg);}
-  100% { left:0px; top:0px;
+  95% { left:0px; top:0px;
     transform: rotateZ(-1188deg);}
-}  */
+  100% {height: 0px ;
+        width: 0px;
+        }
+} 
+
+
+
+@keyframes defeat {
+  0%  { left:450px; top:0px;
+      transform: rotateZ(-108deg);}
+  10%  { left:405px; top:0px;
+      transform: rotateZ(-216deg);}
+  20% { left: 360px; top:0px;
+        transform: rotateZ(-324deg);}
+  30% { left:315px; top:0px;
+    transform: rotateZ(-432deg);}
+  40% { left:270px; top:0px;
+    transform: rotateZ(-540deg);}
+  50% { left:225px; top:0px;
+    transform: rotateZ(-648deg);}
+  60% { left:180px; top:0px;
+    opacity: 100%
+    transform: rotateZ(-756deg);}
+  70% { left:135px; top:0px;
+    transform: rotateZ(-864deg);}
+  80% { left:90px; top:0px;
+    transform: rotateZ(-972deg);}
+  90% { left:45px; top:0px;
+    transform: rotateZ(-1080deg);}
+  95% { left:0px; top:0px;
+    transform: rotateZ(-1188deg);}
+  100% {height: 0px ;
+        width: 0px;
+        }
+} 
 
 #header a, a:hover, a:focus, a:active {
 	text-decoration: none;
