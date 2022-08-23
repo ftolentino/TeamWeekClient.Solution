@@ -1,5 +1,7 @@
 using System.Threading.Tasks;
 using RestSharp;
+using TeamWeekClient.Models;
+using TeamWeekClient.ViewModels;
 
 namespace TeamWeekClient.Models
 {

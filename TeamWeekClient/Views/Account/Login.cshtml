@@ -1,0 +1,22 @@
+@using TeamWeekClient.ViewModels
+@model LoginViewModel
+
+@{
+  Layout = "_Layout";
+}
+<div class="container my-4">
+  @using (Html.BeginForm())
+  {
+      @Html.LabelFor(m => m.Email, "Email: ", new { @class="customLabel"})
+      @Html.TextBoxFor(m => m.Email)<br>
+
+      @Html.LabelFor(m => m.Password, "Password: ", new { @class="customLabel"})
+      @Html.PasswordFor(m => m.Password)<br>
+
+      <br><input type="submit" value="Log in" class="aBtn" id="packBtn" /><br>
+  }
+  <p><br>
+  @Html.ActionLink("Register", "Register", null, null, new {@class="aBtn", @id="packBtn" })
+  @Html.ActionLink("Home", "Index", null, null, new { @class="aBtn", @id="packBtn" })
+  </p>
+</div>

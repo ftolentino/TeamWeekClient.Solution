@@ -1,6 +1,9 @@
 using RestSharp;
 using TeamWeekClient.Models;
 using TeamWeekClient.ViewModels;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Threading.Tasks;
 
 namespace TeamWeekClient.Models
 {
@@ -14,12 +17,12 @@ namespace TeamWeekClient.Models
     //   return response.Content;
     // }
 
-    public static async Task<string> Register(RegisterViewModel newUser)
+    public static async Task<string> Register(string appUser)
     {
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
-      RestRequest request = new RestRequest("authmanagement/login", Method.POST);
+      RestRequest request = new RestRequest("authmanagement/register", Method.POST);
       request.AddHeader("Content-Type", "application/json");
-      request.AddJsonBody(newUser);
+      request.AddJsonBody(appUser);
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
@@ -31,6 +34,20 @@ namespace TeamWeekClient.Models
       request.AddJsonBody(user);
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
+    }
+
+    private static async Task<bool> RefreshToken()
+    {
+      RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
+      RestRequest request = new RestRequest("authmanagement/refreshtoken", Method.POST);
+      TokenRequest tr = new TokenRequest(TokenC.Token, TokenC.RefreshToken);
+      var serializedTR = JsonConvert.SerializeObject(tr);
+      request.AddJsonBody(serializedTR);
+      var response = await client.ExecuteTaskAsync(request);
+      TokenResponse tResponse = JsonConvert.DeserializeObject<TokenResponse>(response.Content);
+      TokenC.Token = tResponse.Token;
+      TokenC.RefreshToken = tResponse.RefreshToken;
+      return response.IsSuccessful;
     }
   }
 }
