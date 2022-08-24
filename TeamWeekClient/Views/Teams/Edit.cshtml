@@ -30,9 +30,6 @@
             @animal.Name
             @animal.AnimalId
             <input id="name" name="animalId" type="hidden" value="@animal.AnimalId">
-            @* @Html.HiddenFor(animal.AnimalId)
-            @Html.HiddenFor(@animal.AnimalId)
-            @Html.HiddenFor($"{animal.AnimalId}") *@
             @Html.HiddenFor(model => model.TeamId)
             <input class="btn" type="submit" value="Add" />
             <br>
