@@ -63,5 +63,17 @@ namespace TeamWeekClient.Models
     {
       var apiCallTask = ApiHelper.DeleteTeam(id);
     }
+
+ public static Team PostAnimalToTeam(int teamId, int animalId)
+    {
+      var apiCallTask = ApiHelper.PostAnimalToTeam(teamId, animalId);
+      var result = apiCallTask.Result;
+
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      Team animalTeam = JsonConvert.DeserializeObject<Team>(jsonResponse.ToString());
+
+      return animalTeam;
+    }
+    
   }
 }

@@ -11,6 +11,8 @@ namespace TeamWeekClient.Models
     {
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
       RestRequest request = new RestRequest($"animals", Method.GET);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
@@ -19,6 +21,18 @@ namespace TeamWeekClient.Models
     {
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
       RestRequest request = new RestRequest($"animals/{id}", Method.GET);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddHeader("Authorization", "Bearer " + AppUser.Token);
+      var response = await client.ExecuteTaskAsync(request);
+      return response.Content;
+    }
+
+    public static async Task<string> GetTeamAnimals(int tId)
+    {
+      RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
+      RestRequest request = new RestRequest($"teams/TeamAnimals/{tId}", Method.GET);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
@@ -46,7 +60,7 @@ namespace TeamWeekClient.Models
     public static async Task<string> GetUserTeam(string id)
     {
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
-      RestRequest request = new RestRequest($"teams/AppUser/{id}", Method.GET);
+      RestRequest request = new RestRequest($"teams/Player/{id}", Method.GET);
       request.AddHeader("Content-Type", "application/json");
       request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       var response = await client.ExecuteTaskAsync(request);
@@ -58,6 +72,7 @@ namespace TeamWeekClient.Models
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
       RestRequest request = new RestRequest($"teams", Method.POST);
       request.AddHeader("Content-Type", "application/json");
+      request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       request.AddJsonBody(newTeam);
       var response = await client.ExecuteTaskAsync(request); 
       if (response.StatusCode == HttpStatusCode.Unauthorized)
@@ -67,6 +82,16 @@ namespace TeamWeekClient.Models
           await PostTeam(newTeam);
         }
       }  
+    }
+
+    public static async Task<string> PostAnimalToTeam(int teamId, int animalId)
+    {
+      RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
+      RestRequest request = new RestRequest($"teams/{teamId}/{animalId}", Method.POST);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddHeader("Authorization", "Bearer " + AppUser.Token);
+      var response = await client.ExecuteTaskAsync(request);
+      return response.Content;
     }
 
     public static async Task PutTeam(int id, string newTeam)

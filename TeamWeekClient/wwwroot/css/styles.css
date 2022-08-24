@@ -242,6 +242,19 @@ div#footer {
   box-shadow: 3px 1px 6px #291010;
 }
 
+.aCardSmall {
+  width: 267px;
+  height: 371px;
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  color: #ebebeb;
+  background-color: #4b2414;
+  border-radius: 5px;
+  margin: 10px;
+}
+
 .cardName {
   margin-left: 10px;
   color: #ebebeb;

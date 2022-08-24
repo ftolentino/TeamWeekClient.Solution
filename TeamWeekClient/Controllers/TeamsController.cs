@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using TeamWeekClient.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Dynamic;
 
 namespace TeamWeekClient.Controllers
 {
@@ -26,7 +27,6 @@ namespace TeamWeekClient.Controllers
       return RedirectToAction("Index", "Teams");
     }
 
-
     public IActionResult Create()
     {
       return View();
@@ -41,7 +41,19 @@ namespace TeamWeekClient.Controllers
     public IActionResult Edit(int id)
     {
       var team = Team.GetDetails(id);
+      ViewBag.Animals = Animal.GetTeamAnimals(id);
+      ViewBag.AllAnimals = Animal.GetAnimals();
       return View(team);
+    }
+
+    [HttpPost]
+    public IActionResult Edit(int teamId, int animal)
+    {
+      var team = Team.GetDetails(teamId);
+      ViewBag.Animals = Animal.GetTeamAnimals(teamId);
+      ViewBag.AllAnimals = Animal.GetAnimals();
+      
+      return RedirectToAction("Edit");
     }
 
     public IActionResult Details(int id)
@@ -62,6 +74,13 @@ namespace TeamWeekClient.Controllers
     {
       Team.Delete(id);
       return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public IActionResult AddAnimalToTeam(int teamId, int animalId)
+    {
+      Team.PostAnimalToTeam(teamId, animalId);
+      return RedirectToAction("Edit");
     }
   }
 }

@@ -6,16 +6,15 @@
 
 <h1>Team Info:</h1>
 <ul>
-  <li>TeamId: @Model.TeamId</li>
+  <li>Name: @Model.Name</li>
   <li>UserId: @Model.UserId</li>
   <li>Wins: @Model.Wins</li>
   <li>Losses: @Model.Losses</li>
 </ul>
 <br>
 
-<a href="/Teams/Edit/@(Model.TeamId)"><p>Edit</p></a>
+<a href="/Teams/Edit/@(Model.TeamId)"><p>Edit Team Name</p></a>
 <br>
-
 <a href="/Teams"><p>Return</p></a>
 
 <a href="/Teams/Delete/@(Model.TeamId)"><p>Delete Team</p></a>
