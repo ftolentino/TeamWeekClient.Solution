@@ -8,10 +8,10 @@ namespace TeamWeekClient.Models
     {
         public int AnimalId { get; set; }
         [Required]
-        public string Image { get; set; }
+        public string Image { get; set; } = default!;
         [Required]
         [StringLength(20)]
-        public string Name { get; set; }
+        public string Name { get; set; } = default!;
         [Required]
         [Range(1, 20)]
         public int HP { get; set; }

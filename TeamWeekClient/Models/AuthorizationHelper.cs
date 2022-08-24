@@ -1,6 +1,11 @@
 using RestSharp;
+
+using Newtonsoft.Json;
+
+
 using TeamWeekClient.Models;
 using TeamWeekClient.ViewModels;
+
 
 namespace TeamWeekClient.Models
 {
@@ -14,21 +19,23 @@ namespace TeamWeekClient.Models
     //   return response.Content;
     // }
 
-    // public static async Task<string> Register(RegisterViewModel newUser)
-    // {
-    //   RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
-    //   RestRequest request = new RestRequest("authmanagement/login", Method.POST);
-    //   request.AddHeader("Content-Type", "application/json");
-    //   request.AddJsonBody(newUser);
-    //   var response = await client.ExecuteTaskAsync(request);
-    //   return response.Content;
-    // }
 
-    public static async Task<string> Login(LoginViewModel user)
+    public static async Task<string> Register(string appUser)
+    {
+      RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
+      RestRequest request = new RestRequest("authmanagement/register", Method.POST);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddJsonBody(appUser);
+      var response = await client.ExecuteTaskAsync(request);
+      return response.Content;
+    }
+
+    public static async Task<string> Login(string appUser)
     {
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
       RestRequest request = new RestRequest("authmanagement/login", Method.POST);
-      request.AddJsonBody(user);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddJsonBody(appUser);
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
