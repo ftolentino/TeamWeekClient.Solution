@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TeamWeekClient.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace TeamWeekClient.Controllers
 {
@@ -12,8 +14,9 @@ namespace TeamWeekClient.Controllers
   {
     public IActionResult Index()
     {
-      var allTeams = Team.GetTeams();
-      return View(allTeams);
+      string id = TokenC.Email;
+      var userTeam = Team.GetUserTeams(id);
+      return View(userTeam);
     }
 
     [HttpPost]
@@ -23,11 +26,11 @@ namespace TeamWeekClient.Controllers
       return RedirectToAction("Index", "Teams");
     }
 
-    //The Index route  above creates a team
-    // public IActionResult Create()
-    // {
-    //   return View();
-    // }
+
+    public IActionResult Create()
+    {
+      return View();
+    }
     
     [HttpPost]
     public IActionResult Create(Team team)

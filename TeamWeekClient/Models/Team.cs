@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System;
+using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -16,6 +17,17 @@ namespace TeamWeekClient.Models
     public static List<Team> GetTeams()
     {
       var apiCallTask = ApiHelper.GetAllTeams();
+      var result = apiCallTask.Result;
+
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      List<Team> teamList = JsonConvert.DeserializeObject<List<Team>>(jsonResponse.ToString());
+
+      return teamList;
+    }
+
+    public static List<Team> GetUserTeams(string id)
+    {
+      var apiCallTask = ApiHelper.GetUserTeam(id);
       var result = apiCallTask.Result;
 
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);

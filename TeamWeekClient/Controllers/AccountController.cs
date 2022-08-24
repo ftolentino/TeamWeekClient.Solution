@@ -47,7 +47,7 @@ namespace TeamWeekClient.Controllers
       TokenC.RefreshToken = tr.RefreshToken;
       TokenC.Email = appUser.Email;
       ViewBag.ResultBody = TokenC.Token;
-      return View("Success");
+      return RedirectToAction("Index", "Home");
     }
 
     public ActionResult Register()

@@ -27,6 +27,8 @@ namespace TeamWeekClient.Models
     {
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
       RestRequest request = new RestRequest($"teams", Method.GET);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
@@ -35,6 +37,18 @@ namespace TeamWeekClient.Models
     {
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
       RestRequest request = new RestRequest($"teams/{id}", Method.GET);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddHeader("Authorization", "Bearer " + AppUser.Token);
+      var response = await client.ExecuteTaskAsync(request);
+      return response.Content;
+    }
+
+    public static async Task<string> GetUserTeam(string id)
+    {
+      RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
+      RestRequest request = new RestRequest($"teams/AppUser/{id}", Method.GET);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
@@ -60,6 +74,7 @@ namespace TeamWeekClient.Models
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
       RestRequest request = new RestRequest($"teams/{id}", Method.PUT);
       request.AddHeader("Content-Type", "application/json");
+      request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       request.AddJsonBody(newTeam);
       var response = await client.ExecuteTaskAsync(request);
       if (response.StatusCode == HttpStatusCode.Unauthorized)

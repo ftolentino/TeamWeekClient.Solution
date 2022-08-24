@@ -1,0 +1,9 @@
+@{
+  Layout = "_Layout";
+}
+
+<form action="/Teams/Details/@(Model.TeamId)" method="post">
+  <label for="name">Name</label>
+  <input id="name" name="name" type="text">
+  <button type="submit">Go!</button>
+</form>

@@ -1,20 +1,19 @@
-
+@model TeamWeekClient.Models.Team;
 @{
-  Layout = "_Layout";
+Layout = "_Layout";
 }
 
-<h1>Teams</h1>
+<h1>Your Team</h1>
 
 <ol>
-@foreach (Team team in Model)
 {
     <ul>
-        <li>TeamId: @team.TeamId</li>
-        <li>UserId: @team.UserId</li>
-        <li>Wins: @team.Wins</li>
-        <li>Losses: @team.Losses</li>
+        <li>TeamId: @Model.TeamId</li>
+        <li>UserId: @Model.UserId</li>
+        <li>Wins: @Model.Wins</li>
+        <li>Losses: @Model.Losses</li>
     </ul>
-    <a href="/Teams/Details/@(team.TeamId)"><p>View Team</p></a>
+    <a href="/Teams/Details/@(Model.TeamId)"><p>View Team</p></a>
     <br>
 }
 </ol>
