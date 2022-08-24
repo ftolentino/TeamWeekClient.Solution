@@ -8,8 +8,8 @@ namespace TeamWeekClient.Models
   public class Team
   {
     public int TeamId { get; set; }
-    public string UserId { get; set; }
-    public string Name { get; set; }
+    public string UserId { get; set; } = default!;
+    public string Name { get; set; } = default!;
     public int Wins { get; set; }
     public int Losses { get; set; }
     
