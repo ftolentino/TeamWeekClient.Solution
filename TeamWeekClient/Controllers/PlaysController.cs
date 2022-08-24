@@ -12,7 +12,8 @@ namespace TeamWeekClient.Controllers
   {
     public IActionResult Index()
     {
-      return View();
+      var battle = Team.Battle(2);
+      return View(battle);
     }
   }
 }
