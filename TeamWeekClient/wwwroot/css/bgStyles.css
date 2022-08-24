@@ -55,11 +55,11 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  border: 1px solid black;
-  width: 80px;
+  border: 2px solid black;
+  width: 82px;
   height: 170px;
   left: 365px;
-  top: 80px;
+  top: 92px;
 }
 
 .signLetter {
@@ -78,6 +78,10 @@
   animation: neon 2s infinite;
 }
 
+.signLetter p:hover {
+  cursor: default;
+}
+
 @keyframes neon {
   0% { text-shadow: 0px 0px 0px rgba(198, 9, 255, 0); color: #000000;}
   50% { text-shadow: 0px 0px 0px rgb(251, 9, 255), 10px 10px 4px #000000; color: #00000000;}
@@ -87,7 +91,7 @@
 .downArrowP {
   position: absolute;
   left: 355px;
-  top: 85px;
+  top: 98px;
   animation: neonArrow 2s infinite;
 }
 
