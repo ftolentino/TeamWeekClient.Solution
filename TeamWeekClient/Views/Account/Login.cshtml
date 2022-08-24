@@ -1,22 +1,24 @@
-@using TeamWeekClient.ViewModels
-@model LoginViewModel
-
 @{
   Layout = "_Layout";
 }
-<div class="container my-4">
-  @using (Html.BeginForm())
-  {
-      @Html.LabelFor(m => m.Email, "Email: ", new { @class="customLabel"})
-      @Html.TextBoxFor(m => m.Email)<br>
 
-      @Html.LabelFor(m => m.Password, "Password: ", new { @class="customLabel"})
-      @Html.PasswordFor(m => m.Password)<br>
+@model AppUser
 
-      <br><input type="submit" value="Log in" class="aBtn" id="packBtn" /><br>
-  }
-  <p><br>
-  @Html.ActionLink("Register", "Register", null, null, new {@class="aBtn", @id="packBtn" })
-  @Html.ActionLink("Home", "Index", null, null, new { @class="aBtn", @id="packBtn" })
-  </p>
-</div>
+@using(Html.BeginForm("Login", "Account")){
+@Html.LabelFor(m => m.Email);
+@Html.TextBoxFor(m => m.Email);
+@Html.LabelFor(m => m.Password);
+@Html.PasswordFor(m => m.Password);
+<input type="submit" value="submit"/>
+}
+
+
+
+
+@* <form action="/Account/Login" method="post">
+  <label for="email">Email</label>
+  <input id="email" name="email" type="text">
+  <label for="password">Password</label>
+  <input id="password" name="password" type="text">
+  <button type="submit">Go!</button>
+</form> *@

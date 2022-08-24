@@ -3,18 +3,7 @@
   Layout = "_Layout";
 }
 
-
-<form action="/Account" method="post">
-  <label for="name">Name</label>
-  <input id="name" name="name" type="text">
-  <label for="email">Email</label>
-  <input id="email" name="email" type="text">
-  <label for="password">Password</label>
-  <input id="password" name="password" type="text">
-  <button type="submit">Go!</button>
-</form>
-
-
-
 <p>@Html.ActionLink("Login to your account", "Login")</p>
 <p>@Html.ActionLink("Create an account", "Register")</p>
+<p>@ViewBag.ResultBody</p>
+

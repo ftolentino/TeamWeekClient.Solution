@@ -20,6 +20,7 @@ namespace TeamWeekClient.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.BodyClass = "bodyHome";
             return View();
         }
 

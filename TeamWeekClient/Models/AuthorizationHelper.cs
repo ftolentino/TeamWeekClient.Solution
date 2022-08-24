@@ -1,9 +1,11 @@
 using RestSharp;
+using Newtonsoft.Json;
 using TeamWeekClient.Models;
 using TeamWeekClient.ViewModels;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
+
 
 namespace TeamWeekClient.Models
 {
@@ -27,11 +29,12 @@ namespace TeamWeekClient.Models
       return response.Content;
     }
 
-    public static async Task<string> Login(LoginViewModel user)
+    public static async Task<string> Login(string appUser)
     {
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
       RestRequest request = new RestRequest("authmanagement/login", Method.POST);
-      request.AddJsonBody(user);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddJsonBody(appUser);
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }

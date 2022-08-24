@@ -1,3 +1,6 @@
+
+
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,10 +10,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Microsoft.AspNetCore.Mvc;
 using TeamWeekClient.Models;
-using TeamWeekClient.ViewModels;
-using Microsoft.AspNetCore.Identity;
-using RestSharp;
-// using System.Text.Json;
+
+
 
 
 namespace TeamWeekClient.Controllers
@@ -20,6 +21,7 @@ namespace TeamWeekClient.Controllers
 
     public ActionResult Index()
     {
+      ViewBag.ResultBody = AppUser.Token;
       if (TokenC.Token != null)
       {
         ViewBag.Token = TokenC.Token;
@@ -59,16 +61,34 @@ namespace TeamWeekClient.Controllers
     // }
 
     [HttpPost]
-    public async Task<IActionResult> Register(AppUser user)
+    public async Task<IActionResult> Login(AppUser appUser)
     {
-      var response = await AppUser.Post(user);
+      var response = await AppUser.Login(appUser);
+      TokenResponse tr = JsonConvert.DeserializeObject<TokenResponse>(response);
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response);
-      AppUser.Token = ((string)jsonResponse["token"]); 
-      ViewBag.ResultBody = AppUser.Token;     
+      AppUser.Token = ((string)jsonResponse["token"]);  
+      TokenC.Token = tr.Token;
+      TokenC.RefreshToken = tr.RefreshToken;
+      TokenC.Email = appUser.Email;
+      ViewBag.ResultBody = TokenC.Token;
+      return View("Success");
+    }
+
+    public ActionResult Register()
+    {
+      ViewBag.ResultBody = AppUser.Token;
       return View();
     }
 
-    
-
+    [HttpPost]
+    public async Task<IActionResult> Register(AppUser appUser)
+    {
+      var response = await AppUser.Post(appUser);
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response);
+      AppUser.Token = ((string)jsonResponse["token"]);
+      AppUser.RefreshToken = ((string)jsonResponse["refreshtoken"]);
+      ViewBag.ResultBody = AppUser.Token;
+      return View("Success");
+    }
   }
 }

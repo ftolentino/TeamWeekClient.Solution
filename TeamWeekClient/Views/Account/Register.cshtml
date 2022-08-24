@@ -1,7 +1,9 @@
 @{
   Layout = "_Layout";
 }
-<form action="/AppUser" method="post">
+<p>hello</p>
+<form action="/Account/Register" method="post">
+
   <label for="name">Name</label>
   <input id="name" name="name" type="text">
   <label for="email">Email</label>
@@ -10,3 +12,5 @@
   <input id="password" name="password" type="text">
   <button type="submit">Go!</button>
 </form>
+
+<p>@ViewBag.ResultBody</p>

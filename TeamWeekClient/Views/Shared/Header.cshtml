@@ -1,3 +1,5 @@
+@using TeamWeekClient.Models;
+
 <nav class="navbar sticky-top navbar-expand-lg" style="background-color: rgb(6, 46, 46);">
   <div class="container-fluid">
     @* <p class="my-2">@Html.ActionLink("Home", "Index", "Home", null, new { @class ="navbar-brand text-light"})</p> *@
@@ -7,6 +9,18 @@
         
       </ul>
     </div>
+<<<<<<< HEAD
     
+=======
+      @if (AppUser.Token != null)
+              {
+                  @Html.ActionLink($"{TokenC.Email}", "Index", "Account" )
+              }
+              else
+              {
+                  @Html.ActionLink("Register", "Register", "Account", null, new { @class= "mx-2"})
+                  @Html.ActionLink("Log in", "Login", "Account")
+              }
+>>>>>>> main
   </div>
 </nav>

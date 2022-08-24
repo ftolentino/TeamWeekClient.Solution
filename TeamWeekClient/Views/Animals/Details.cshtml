@@ -2,19 +2,9 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1>Animals</h1>
+<div class="container">
+	<h1>Battle animation</h1>
 
-<ol>
-@foreach (Animal animal in Model)
-{
-    <ul>
-        <li>ID: @animal.AnimalId</li>
-        <li>Name: @animal.Name</li>
-        <li>Image: @animal.Image</li>
-        <li>HP: @animal.HP</li>
-        <li>Attack: @animal.Attack</li>
-    </ul>
-    <a href="/Animals/Details/@(animal.AnimalId)"><p>View Animal</p></a>
-    <br>
-}
-</ol>
+	<div id="battle"></div>
+</div>
+
