@@ -2,6 +2,8 @@ using System.Net;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RestSharp;
+using TeamWeekClient.Models;
+using TeamWeekClient.ViewModels;
 
 namespace TeamWeekClient.Models
 {

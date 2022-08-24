@@ -1,17 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+
 <div class="homeBg">
   <div class="container alley my-4">
     <div class="h-100 d-flex flex-column align-items-center">
       <h1 class="text-center my-4 styledHeader">Seung Lee's Animal Gauntlet!</h1>
       <div class="d-flex">   
-        @Html.ActionLink("LOG IN", "Index", "Animals", null, new { @class="aBtn homeBtn", @id="liBtn" })
+        @Html.ActionLink("USER", "Index", "Users", null, new { @class="aBtn homeBtn", @id="uBtn" })
         @Html.ActionLink("PACKS", "Index", "Animals", null, new { @class="aBtn homeBtn", @id="packBtn" })
         @Html.ActionLink("PLAY", "Index", "Animals", null, new { @class="aBtn homeBtn", @id="pBtn" })
         <div class="downArrowP">
           <div class="downArrowClip"></div>
-        s</div>
+        </div>
         <div id="pSign">
           <div class="signLetter">
             <p>PLAY</p>
