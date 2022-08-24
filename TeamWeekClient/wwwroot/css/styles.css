@@ -42,13 +42,6 @@ div#footer {
   text-align: center;
 }
 
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-}
-
 /* ANIMATION */
 .player1 {
   width: 200px;
@@ -169,6 +162,7 @@ div#footer {
 /* Fonts */
 .styledHeader{
   font-family: PhillySans;
+  position: absolute;
   z-index: 1;
   font-size: 50pt;
   color: #FF57BE;
