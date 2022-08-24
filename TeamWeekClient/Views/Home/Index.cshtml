@@ -4,14 +4,19 @@
 <div class="homeBg">
   <div class="container alley my-4">
     <div class="h-100 d-flex flex-column align-items-center">
-      <h1 class="text-center my-4">Welcome to our Game!</h1>
-      <div class="">   
+      <h1 class="text-center my-4 styledHeader">Seung Lee's Animal Gauntlet!</h1>
+      <div class="d-flex">   
         @Html.ActionLink("LOG IN", "Index", "Animals", null, new { @class="aBtn homeBtn", @id="liBtn" })
         @Html.ActionLink("PACKS", "Index", "Animals", null, new { @class="aBtn homeBtn", @id="packBtn" })
         @Html.ActionLink("PLAY", "Index", "Animals", null, new { @class="aBtn homeBtn", @id="pBtn" })
+        <div id="pSign">
+          <div class="signLetter">
+            <p>PLAY</p>
+            <p><i class="arrow down"></i></p>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
 </div>
 

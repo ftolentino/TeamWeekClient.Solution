@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Automania;
+  src: url("../font/AUTOMANI.TTF");
+}
+
 #bgColor {
   position: relative;
   background-color: #a80fbd;
@@ -5,22 +10,93 @@
 }
 
 .homeBg {
+  justify-content: center;
   display: flex;
-  margin: 0 auto;
 }
 
 .alley {
   background-image: url(../img/slagBackground1.png);
   background-color: #ffffff;
-  background-attachment: fixed;
+  background-attachment: center;
   background-repeat: no-repeat;
   background-size: 1000px;
   position: absolute;
   width: 1000px;
-  height: 465px;
+  max-width: 1000px;
+  height: 560px;
+  top: 125px;
+  margin: 0px auto;
 }
 
 #packBtn {
   position: absolute;
+  right: 100px;
   bottom: 0px;
+  padding: 25px;
+}
+
+#liBtn {
+  position: absolute;
+  left: 100px;
+  bottom: 0px;
+  padding: 25px;
+}
+
+#pBtn {
+  position: absolute;
+  right: 445px;
+  bottom: 100px;
+  padding: 25px;
+}
+
+#pSign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border: 1px solid black;
+  width: 80px;
+  height: 170px;
+  left: 365px;
+  top: 80px;
+}
+
+.signLetter {
+  padding: 10px 0;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+
+.signLetter p {
+  z-index: -10;
+  display: block;
+  font-family: Automania;
+  margin-top: 19px;
+  font-size: 30pt;
+  line-height: 10px;
+  animation: neon 2s infinite;
+}
+
+.arrow {
+  text-orientation: horizontal;
+  z-index: -10;
+  display: block;
+  border: solid black;
+  border-width: 0px 3px 3px 0px;
+  height: 50px;
+  width: 50px;
+  padding: 0px;
+  bottom: 0px;
+  animation: neon 5s infinite;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+@keyframes neon {
+  0% { text-shadow: 0px 0px 0px rgba(198, 9, 255, 0); color: #000000;}
+  50% { text-shadow: 0px 0px 0px rgb(251, 9, 255), 10px 10px 4px #000000; color: #00000000;}
+  100% { text-shadow: 0px 0px 0px rgba(198, 9, 255, 0); color: #000000;}
 }

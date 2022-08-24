@@ -169,7 +169,8 @@ div#footer {
 /* Fonts */
 .styledHeader{
   font-family: PhillySans;
-  font-size: 18rem;
+  z-index: 1;
+  font-size: 50pt;
   color: #FF57BE;
   outline-color: #57FF98;
   text-shadow: 15px 15px 0 #000,
