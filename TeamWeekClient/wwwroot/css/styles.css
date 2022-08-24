@@ -44,7 +44,7 @@ div#footer {
 /* ANIMATION */
 .playerAnimationTeam1 {
   animation-duration: 2s;
-  animation: leanright; 
+  animation:slideright 5s ,leanright 10s; 
 }
 
 .playerAnimationTeam2 {
