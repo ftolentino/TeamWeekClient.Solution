@@ -1,0 +1,38 @@
+@{
+  Layout = "_Layout";
+}
+
+@using TeamWeekClient.Models;
+@model TeamWeekClient.Models.Team;
+
+<form action="/Teams/Details/@(Model.TeamId)" method="post">
+@* <input type="hidden"  *@
+  @Html.HiddenFor(model => model.UserId)
+  @Html.HiddenFor(model => model.Wins)
+  @Html.HiddenFor(model => model.Losses)
+  <input id="name" name="name" type="text">
+  <button type="submit">Go!</button>
+</form>
+@foreach (Animal animal in ViewBag.Animals)
+        {
+          @using (Html.BeginForm())
+          {
+                @animal.Name
+                <input class="btn" type="submit" value="Delete" />
+          }
+        }
+
+<p>Animals availabe to add:</p>
+ @foreach (Animal animal in ViewBag.AllAnimals)
+        {
+          @using (Html.BeginForm("AddAnimalToTeam", "Teams", FormMethod.Post))
+          {
+            @animal.Name
+            @animal.AnimalId
+            <input id="name" name="animalId" type="hidden" value="@animal.AnimalId">
+            @Html.HiddenFor(model => model.TeamId)
+            <input class="btn" type="submit" value="Add" />
+            <br>
+          }
+        } 
+
