@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Automania;
+  src: url("../font/AUTOMANI.TTF");
+}
+
 #bgColor {
   position: relative;
   background-color: #a80fbd;
@@ -5,22 +10,103 @@
 }
 
 .homeBg {
+  justify-content: center;
   display: flex;
-  margin: 0 auto;
 }
 
 .alley {
   background-image: url(../img/slagBackground1.png);
   background-color: #ffffff;
-  background-attachment: fixed;
+  background-attachment: center;
   background-repeat: no-repeat;
   background-size: 1000px;
   position: absolute;
   width: 1000px;
-  height: 465px;
+  max-width: 1000px;
+  height: 560px;
+  top: 125px;
+  margin: 0px auto;
 }
 
 #packBtn {
   position: absolute;
+  right: 100px;
   bottom: 0px;
+  padding: 25px;
+}
+
+#liBtn {
+  position: absolute;
+  left: 100px;
+  bottom: 0px;
+  padding: 25px;
+}
+
+#pBtn {
+  position: absolute;
+  right: 445px;
+  bottom: 100px;
+  padding: 25px;
+}
+
+#pSign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border: 1px solid black;
+  width: 80px;
+  height: 170px;
+  left: 365px;
+  top: 80px;
+}
+
+.signLetter {
+  padding: 10px 0;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+
+.signLetter p {
+  z-index: -10;
+  display: block;
+  font-family: Automania;
+  margin-top: 19px;
+  font-size: 30pt;
+  line-height: 10px;
+  animation: neon 2s infinite;
+}
+
+@keyframes neon {
+  0% { text-shadow: 0px 0px 0px rgba(198, 9, 255, 0); color: #000000;}
+  50% { text-shadow: 0px 0px 0px rgb(251, 9, 255), 10px 10px 4px #000000; color: #00000000;}
+  100% { text-shadow: 0px 0px 0px rgba(198, 9, 255, 0); color: #000000;}
+}
+
+.downArrowP {
+  position: absolute;
+  left: 355px;
+  top: 85px;
+  animation: neonArrow 2s infinite;
+}
+
+.downArrowClip {
+	width: 100px;
+	height: 160px;
+	margin: 0 auto;
+	background-color: rgb(0, 0, 0);
+  clip-path: polygon(30% 0%, 69% 0, 70% 51%, 89% 53%, 50% 100%, 11% 53%, 30% 51%, 31% 8%, 36% 5%, 36% 54%, 19% 56%, 50% 93%, 81% 56%, 64% 56%, 64% 5%, 30% 5%);
+  animation: arrowColor 2s infinite;
+}
+
+@keyframes neonArrow {
+  0% { filter: drop-shadow(0px 0px 0px rgba(0, 30, 200, 0));}
+  50% { filter: drop-shadow(10px 10px 4px #000000);}
+  100% { filter: drop-shadow(0.4rem 0.4rem 1rem rgba(0, 30, 200, 0));}
+}
+
+@keyframes arrowColor {
+  0% { background-color: black;}
+  50% { background-color: rgb(251, 9, 255);}
+  100% { background-color: black;}
 }
