@@ -102,6 +102,14 @@ namespace TeamWeekClient.Models
       return response.IsSuccessful;
     }
 
-    
+    public static async Task<string> GetBattleResult(int id)
+    {
+      RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
+      RestRequest request = new RestRequest($"teams/battle/{id}", Method.GET);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddHeader("Authorization", "Bearer " + TokenC.Token);
+      var response = await client.ExecuteTaskAsync(request);
+      return response.Content;
+    }
   }
 }

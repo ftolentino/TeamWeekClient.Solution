@@ -1,13 +1,64 @@
 @{
-    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
 }
 
-<div class="container d-flex flex-column align-items-center">
-    <h1 class="pageTitle text-center">Battle!</h1>
-    <div class="gameScreen">
-			<div class="d-flex flex-row justify-content-center">
-				<div class="player1"></div>
-				<div class="player2"></div>
-			</div>
+@model TeamWeekClient.Models.Battle
+
+<div class="bgColor">
+    <div class="container d-flex flex-column align-items-center">
+        <h1 class="pageTitle text-center">Battle!</h1>
+        <div class="gameScreen">
+                    <div class="d-flex flex-row justify-content-between">
+                        <div class="team1Bg">
+                            <div class="battleteam1">@Model.team1.name</div>
+                        </div>
+                        <div class="team2Bg">
+                            <div class="battleteam2">@Model.team2.name</div>
+                        </div>
+                    </div>
+                <div class="d-flex flex-row justify-content-center">
+                @foreach(var animal in Model.team1.animals)
+                {
+                    <div class="player">
+                        <img class="battleimg" src="@animal.Image" alt="image of @animal.Name">
+                    </div>
+                }
+                @foreach(var animal in Model.team2.animals)
+                {
+                    <div class="player">
+                        <img class="battleimg" src="@animal.Image" alt="image of @animal.Name">
+                    </div>
+                }
+                </div>
+        </div>
     </div>
 </div>
+
+
+@*
+
+Model.outcome
+    possible values
+    0 = tie
+    1 = team1 won
+    2 = team2 won
+
+Model.team1
+    team1.id = team id in the database
+    team1.name = team name
+    team1.animals = list of animals in team 1
+
+Model.team1.animals
+    animals[0] = first animal
+    just use foreach or something to go over them or whatever your choice
+
+Model.team2
+    team2.id = team id in the database
+    team2.name = team name
+    team2.animals = list of animals in team 2
+
+Model.team2.animals
+    animals[0] = first animal
+    just use foreach or something to go over them or whatever your choice
+
+*@

@@ -28,8 +28,18 @@ html {
 body {
   overflow: hidden;
   margin-bottom: 60px;
-  background-color: #5b7142;
+  /* background-color: #5b7142; */
 }
+
+/* div#header{
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  color:#CCC;
+  background:rgb(6, 46, 46);
+  padding:8px;
+} */
 
 div#footer {
   position:fixed;
@@ -43,10 +53,11 @@ div#footer {
 }
 
 /* ANIMATION */
-.player1 {
+.player {
   width: 200px;
   height: 200px;
-  margin-right: 300px;
+  margin: 20;
+  top: 13rem;
   background-image: url('../img/beerbellybear.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -56,18 +67,6 @@ div#footer {
   animation: wiggle 2s linear, example 2s, defeat .25s ; 
 }
 
-.player2 {
-  width: 200px;
-  height: 200px;
-  margin-left: 80px;
-  background-image: url('../img/musclepikachu.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  position: relative;
-  animation-duration: 2s;
-  animation: wiggle 2s linear, example 2s, defeat .25s ; 
-}
 /* @keyframes example {
   0%   { left:0px; top:0px;}
   10%  { left:700px; top:0px;}
@@ -148,16 +147,16 @@ div#footer {
 }
 /* Play View */
 .gameScreen{
-  height: 1000px;
-  width: 2000px;
-  max-height: 100%;
-  /* max-width: 100%; */
+  background-image: url(../img/slagBackground1.png);
+  background-attachment: center;
   background-repeat: no-repeat;
-  background-image: url('../img/slagBackground1.png');
-  background-size: cover;
-  background-position: center;
-  /* padding:1%; 
-  background: black;  */
+  background-size: 1000px;
+  position: absolute;
+  width: 1000px;
+  max-width: 1000px;
+  height: 560px;
+  top: 400px;
+  margin: 0px auto;
 }
 /* Fonts */
 .styledHeader{
@@ -245,4 +244,42 @@ div#footer {
   float: right;
   margin-right: 10px;
 }
+
+/* Team HUD */
+.team1Bg{
+  background-color: #FF57BE;
+  margin-left: 100px;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 25px;
+}
+.battleteam1{
+  font-family: AxiMosi;
+  font-size: 2rem;
+  text-shadow:
+    2px 2px 0 #57FF98,
+    -1px -1px 0 #57FF98,  
+    1px -1px 0 #57FF98,
+    -1px 1px 0 #57FF98,
+    1px 1px 0 #57FF98;
+}
+.team2Bg{
+  background-color: #57FF98;
+  margin-right: 100px;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 25px;
+}
+.battleteam2{
+  font-family: AxiMosi;
+  font-size: 2rem;
+  text-shadow:
+    2px 2px 0 #FF57BE,
+    -1px -1px 0 #FF57BE,  
+    1px -1px 0 #FF57BE,
+    -1px 1px 0 #FF57BE,
+    1px 1px 0 #FF57BE;
+  
+}
+
 
