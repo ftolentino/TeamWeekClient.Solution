@@ -1,5 +1,10 @@
 using RestSharp;
+
 using Newtonsoft.Json;
+
+
+using TeamWeekClient.Models;
+using TeamWeekClient.ViewModels;
 
 
 namespace TeamWeekClient.Models
@@ -13,6 +18,7 @@ namespace TeamWeekClient.Models
     //   var response = await client.ExecuteTaskAsync(request);
     //   return response.Content;
     // }
+
 
     public static async Task<string> Register(string appUser)
     {
@@ -33,7 +39,5 @@ namespace TeamWeekClient.Models
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
-
-    
   }
 }

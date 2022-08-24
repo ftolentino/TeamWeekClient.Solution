@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
-/* font-family: 'Heebo', sans-serif; */
+@import url('../font/PhillySans.otf');
+@font-face {
+  font-family: PhillySans;
+  src: url('../font/PhillySans.otf');
+}
+@font-face {
+  font-family: AxiMosi;
+  src: url('../font/aAksiMosi.otf');
+}
 
 html {
   font-size: 14px;
@@ -18,19 +26,55 @@ html {
 }
 
 body {
+  overflow: hidden;
   margin-bottom: 60px;
+  background-color: #5b7142;
+}
+
+div#footer {
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  color:#CCC;
+  background:rgb(6, 46, 46);
+  padding:8px;
+  text-align: center;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
 }
 
 /* ANIMATION */
 .player1 {
-  /* width: 100px;
-  height: 100px;
-  background-color: red; */
+  width: 200px;
+  height: 200px;
+  margin-right: 300px;
+  background-image: url('../img/beerbellybear.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   position: relative;
   animation-duration: 2s;
   animation: wiggle 2s linear, example 2s, defeat .25s ; 
 }
- 
+
+.player2 {
+  width: 200px;
+  height: 200px;
+  margin-left: 80px;
+  background-image: url('../img/musclepikachu.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+  animation-duration: 2s;
+  animation: wiggle 2s linear, example 2s, defeat .25s ; 
+}
 /* @keyframes example {
   0%   { left:0px; top:0px;}
   10%  { left:700px; top:0px;}
@@ -42,7 +86,7 @@ body {
   0%   {background-color:red; left:0px; top:0px;}
   10%  {background-color:yellow; left:200px; top:0px;}
 } */
- /* @keyframes wiggle {
+/* @keyframes wiggle {
   0%, 7% {
     transform: rotateZ(0);
   }
@@ -90,7 +134,7 @@ body {
   100% { left:0; top:0px;}
 } */
 
- @keyframes defeat {
+@keyframes defeat {
   0%  { left:700px; top:0px;
       transform: rotateZ(0);}
   10%  { left:630px; top:0px;}
@@ -109,6 +153,43 @@ body {
 	text-decoration: none;
 	color: inherit;
 }
+/* Play View */
+.gameScreen{
+  height: 1000px;
+  width: 2000px;
+  max-height: 100%;
+  /* max-width: 100%; */
+  background-repeat: no-repeat;
+  background-image: url('../img/slagBackground1.png');
+  background-size: cover;
+  background-position: center;
+  /* padding:1%; 
+  background: black;  */
+}
+/* Fonts */
+.styledHeader{
+  font-family: PhillySans;
+  font-size: 18rem;
+  color: #FF57BE;
+  outline-color: #57FF98;
+  text-shadow: 15px 15px 0 #000,
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.pageTitle{
+  font-family: AxiMosi;
+  font-size: 10rem;
+  color: #57FF98;
+  text-shadow:
+    3px 3px 0 #FF57BE,
+    -1px -1px 0 #FF57BE,  
+    1px -1px 0 #FF57BE,
+    -1px 1px 0 #FF57BE,
+    1px 1px 0 #FF57BE;
+}
 
 .aBtn {
   border-radius: 4px;
@@ -124,16 +205,16 @@ body {
 
 /* HOME INDEX */
 
+
+
 #loginBtn {
   background-color: #777777;
   color: #c0c0c0;
   box-shadow: 2px 5px #444444;
 }
 
-#packBtn {
-  background-color: #c93e3e;
+.homeBtn {
   color: #F3F9F9;
-  box-shadow: 2px 5px #444444;
 }
 
 /* ANIMAL INDEX */

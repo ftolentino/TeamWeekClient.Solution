@@ -22,13 +22,26 @@ namespace TeamWeekClient.Controllers
       Team.Post(team);
       return RedirectToAction("Index", "Teams");
     }
-    public IActionResult Details(int id)
+
+    //The Index route  above creates a team
+    // public IActionResult Create()
+    // {
+    //   return View();
+    // }
+    
+    [HttpPost]
+    public IActionResult Create(Team team)
+    {
+      Team.Post(team);
+      return RedirectToAction("Index");
+    }
+    public IActionResult Edit(int id)
     {
       var team = Team.GetDetails(id);
       return View(team);
     }
 
-    public IActionResult Edit(int id)
+    public IActionResult Details(int id)
     {
       var team = Team.GetDetails(id);
       return View(team);

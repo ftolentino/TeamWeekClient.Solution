@@ -1,0 +1,14 @@
+@model TeamWeekClient.Models.Team
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Create New Team</h1>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name, "Name:")
+  @Html.TextBoxFor(model => model.Name, new { required = "required" })
+  
+  <input type="image" img src="https://raw.githubusercontent.com/GarrettHays/images/main/noun-add-258794.png" class = "addicon" style="width:20px;"/>
+}
