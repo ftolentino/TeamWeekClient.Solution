@@ -7,14 +7,16 @@
     <div class="h-100 d-flex flex-column align-items-center">
       <h1 class="text-center my-2 styledHeader">Seung Lee's Animal Gauntlet!</h1>
       <div class="d-flex">   
-        @Html.ActionLink("USER", "Index", "Users", null, new { @class="aBtn homeBtn", @id="uBtn" })
         @Html.ActionLink("PACKS", "Index", "Animals", null, new { @class="aBtn homeBtn", @id="packBtn" })
-<<<<<<< HEAD
-        @Html.ActionLink("PLAY", "Index", "Animals", null, new { @class="aBtn homeBtn", @id="pBtn" })
-        @Html.ActionLink("Teams", "Index", "Teams", null, new { @class="aBtn homeBtn", @id="pBtn" })
-=======
-        @Html.ActionLink("PLAY", "Index", "Plays", null, new { @class="aBtn homeBtn", @id="pBtn" })
->>>>>>> main
+        @if(AppUser.Token != null)
+        {
+          @Html.ActionLink("USER", "Index", "Users", null, new { @class="aBtn homeBtn", @id="uBtn" })
+          @Html.ActionLink("TEAMS", "Index", "Teams", null, new { @class="aBtn homeBtn", @id="pBtn" })
+        }
+        else
+        {
+          @Html.ActionLink("LOGIN", "Login", "Account", null, new { @class="aBtn homeBtn", @id="pBtn" })
+        }
         <div class="downArrowP">
           <div class="downArrowClip"></div>
         </div>

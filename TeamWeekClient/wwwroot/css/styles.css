@@ -21,13 +21,15 @@ html {
 }
 
 html {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
   position: relative;
   min-height: 100%;
+  min-width: 100%;
 }
 
 body {
-  overflow: hidden;
-  margin-bottom: 60px;
   /* background-color: #5b7142; */
 }
 

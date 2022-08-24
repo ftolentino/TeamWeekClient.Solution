@@ -13,6 +13,7 @@
       @if (AppUser.Token != null)
               {
                   @Html.ActionLink($"{TokenC.Email}", "Index", "Account" )
+                  @Html.ActionLink("Logout", "Logout", "Account")
               }
               else
               {
