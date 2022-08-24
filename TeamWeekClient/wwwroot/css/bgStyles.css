@@ -1,0 +1,26 @@
+#bgColor {
+  position: relative;
+  background-color: #a80fbd;
+  height: 100vh;
+}
+
+.homeBg {
+  display: flex;
+  margin: 0 auto;
+}
+
+.alley {
+  background-image: url(../img/slagBackground1.png);
+  background-color: #ffffff;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 1000px;
+  position: absolute;
+  width: 1000px;
+  height: 465px;
+}
+
+#packBtn {
+  position: absolute;
+  bottom: 0px;
+}
