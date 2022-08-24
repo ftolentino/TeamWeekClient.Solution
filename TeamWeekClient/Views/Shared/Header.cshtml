@@ -9,14 +9,14 @@
         
       </ul>
     </div>
-    @if (AppUser.Token != null)
-            {
-                @Html.ActionLink($"{TokenC.Email}", "Index", "Account" )
-            }
-            else
-            {
-                @Html.ActionLink("Register", "Register", "Account", null, new { @class= "mx-2"})
-                @Html.ActionLink("Log in", "Login", "Account")
-            }
+      @if (AppUser.Token != null)
+              {
+                  @Html.ActionLink($"{TokenC.Email}", "Index", "Account" )
+              }
+              else
+              {
+                  @Html.ActionLink("Register", "Register", "Account", null, new { @class= "mx-2"})
+                  @Html.ActionLink("Log in", "Login", "Account")
+              }
   </div>
 </nav>
