@@ -65,7 +65,7 @@ namespace TeamWeekClient.Models
     }
 
 
- public static Team PostAnimalToTeam(int teamId, int animalId)
+    public static Team PostAnimalToTeam(int teamId, int animalId)
     {
       var apiCallTask = ApiHelper.PostAnimalToTeam(teamId, animalId);
       var result = apiCallTask.Result;
@@ -75,8 +75,13 @@ namespace TeamWeekClient.Models
 
       return animalTeam;
     }
-    
 
+    public static void DeleteAnimalFromTeam(int teamId, int animalId)
+    {
+      var apiCallTask = ApiHelper.DeleteAnimalTeam(teamId, animalId);
+      
+    }
+    
     public static Battle Battle(int teamId)
     {
       var apiCallTask = ApiHelper.GetBattleResult(teamId);

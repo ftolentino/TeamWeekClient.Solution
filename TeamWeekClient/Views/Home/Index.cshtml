@@ -2,21 +2,35 @@
     ViewData["Title"] = "Home Page";
 }
 
+<script>
+function play(url) {
+  new Audio(url).play();
+}
+</script>
+
+@{
+  string button = "~/audio/button.mp3";
+}
+
+
 <div class="homeBg">
   <div class="container alley my-4">
     <div class="h-100 d-flex flex-column align-items-center">
-      <h1 class="text-center my-2 styledHeader">Seung Lee's Animal Gauntlet!</h1>
+      <h1 class="text-center my-2 styledHeader"></h1>
       <div class="d-flex">   
-        @Html.ActionLink("PACKS", "Index", "Animals", null, new { @class="aBtn homeBtn", @id="packBtn" })
+        @Html.ActionLink("PACKS", "Index", "Animals", null, new { @class="aBtn homeBtn", @id="packBtn", @onclick="play(@button)" })
         @if(AppUser.Token != null)
         {
-          @Html.ActionLink("USER", "Index", "Users", null, new { @class="aBtn homeBtn", @id="uBtn" })
+           @* user button add when route implemented in API *@
+          @* @Html.ActionLink("USER", "Index", "Users", null, new { @class="aBtn homeBtn", @id="uBtn" })  *@
+          <a class="aBtn homeBtn" id="uBtn" href="">USER</a>
           @Html.ActionLink("TEAMS", "Index", "Teams", null, new { @class="aBtn homeBtn", @id="pBtn" })
         }
         else
         {
           @Html.ActionLink("LOGIN", "Login", "Account", null, new { @class="aBtn homeBtn", @id="pBtn" })
         }
+        <audio id="audio" src="~/audio/button.mp3"></audio>
         <div class="downArrowP">
           <div class="downArrowClip"></div>
         </div>
