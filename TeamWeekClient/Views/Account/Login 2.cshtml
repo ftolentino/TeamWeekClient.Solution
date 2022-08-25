@@ -1,18 +1,18 @@
-
-
 @{
   Layout = "_Layout";
 }
 
 @model AppUser
 
-@using(Html.BeginForm("Login", "Account")){
-@Html.LabelFor(m => m.Email);
-@Html.TextBoxFor(m => m.Email);
-@Html.LabelFor(m => m.Password);
-@Html.PasswordFor(m => m.Password);
-<input type="submit" value="submit"/>
-}
+<div class="container">
+  @using(Html.BeginForm("Login", "Account")){
+  @Html.LabelFor(m => m.Email);
+  @Html.TextBoxFor(m => m.Email);
+  @Html.LabelFor(m => m.Password);
+  @Html.PasswordFor(m => m.Password);
+  <input type="submit" value="submit"/>
+  }
+</div>
 
 
 
