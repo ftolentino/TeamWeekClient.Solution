@@ -2,9 +2,19 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container">
-	<h1>Battle animation</h1>
-
-	<div id="battle"></div>
+@model TeamWeekClient.Models.Animal;
+<div class="row justify-content-center">
+	<div class="container d-flex justify-content-center" style="margin: 5em">
+		<div class = "animalDetails">
+			<h1 class="teamName">@Model.Name's Rap Sheet</h1>
+			<img src="@Model.Image" alt="picture of @Model.Image">
+			<br>
+			<div class="d-flex flex-column align-items-center" style="font-size: 1.5em">
+				<p>Name: @Model.Name</p> 
+				<p>HP: @Model.HP</p>
+				<p>Attack: @Model.Attack</p>
+			</div>
+			<div id="battle"></div>
+		</div>
+	</div>
 </div>
-
