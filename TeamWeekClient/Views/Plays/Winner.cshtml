@@ -1,0 +1,57 @@
+@{
+    Layout = "_Layout";
+}
+
+@model TeamWeekClient.Models.Battle
+
+<div class="bgColor">
+    <div class="container d-flex flex-column align-items-center">
+        <h1 class="pageTitle text-center">WINNER!</h1>
+        <div class="d-flex flex-column align-items-center">
+            <div class="container d-flex flex-row justify-content-center">
+                @if(Model.outcome == 1)
+                {
+                    <p class="outcome">@Model.team1.name win!</p>
+                }
+                else if(Model.outcome == 2)
+                {
+                    <p class="outcome">@Model.team2.name win!</p>
+                }
+            </div>
+            @Html.ActionLink("PLAY AGAIN", "Index", "Teams", null, new { @class="btn-lg btn-danger my-3"})
+        </div>
+        <div class="gameScreen">
+                    <div class="d-flex flex-row justify-content-between">
+                        <div class="team1Bg">
+                            <div class="battleteam1">@Model.team1.name</div>
+                        </div>
+                    </div>
+                <div class="player">
+                    <ul class="d-flex flex-row">
+                        @if(Model.outcome == 0)
+                        {
+                            <p class="outcome">@Model.team1.name "and" @Model.team2.name + "Tied!"</p>
+                        }
+                        else if(Model.outcome == 1)
+                        {
+                            @foreach(var animal in Model.team1.animals)
+                            {
+                                <li>
+                                    <img class="battleimg playerAnimationTeam1" src="@animal.Image" alt="image of @animal.Name">
+                                </li>
+                            }
+                        }
+                        else if(Model.outcome == 2)
+                        {
+                            @foreach(var animal2 in Model.team2.animals)
+                            {
+                                <li>
+                                    <img class="battleimg2 playerAnimationTeam2" src="@animal2.Image" alt="image of @animal2.Name">
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+        </div>
+    </div>
+</div>

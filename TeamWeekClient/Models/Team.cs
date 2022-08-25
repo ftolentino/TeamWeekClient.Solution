@@ -65,7 +65,7 @@ namespace TeamWeekClient.Models
     }
 
 
- public static Team PostAnimalToTeam(int teamId, int animalId)
+  public static Team PostAnimalToTeam(int teamId, int animalId)
     {
       var apiCallTask = ApiHelper.PostAnimalToTeam(teamId, animalId);
       var result = apiCallTask.Result;
