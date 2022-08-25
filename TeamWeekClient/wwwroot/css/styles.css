@@ -102,19 +102,16 @@ div#footer {
   10%  { left:0px; top:0px;}
 }
 
-@keyframes playerWinAnimationTeam1 {
+.playerWinAnimationTeam1 {
   animation-duration: 2s;
   animation: winner 2s;
 }
 
 
-
-@keyframes playerWinAnimationTeam2 {
+.playerWinAnimationTeam2 {
   animation-duration: 2s;
   animation: winner 2s;
 }
-
-
 
 @keyframes winner {
   0%  { top:0px; transform: rotateZ(-108deg);}
