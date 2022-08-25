@@ -4,14 +4,20 @@
   Layout = "_Layout";
 }
 
-<h1>Create New Team</h1>
+<h1 class="teamTitle">Create New Team</h1>
+<br>
+<br>
+<div class="container d-flex justify-content-center">
 @using (Html.BeginForm("Create", "Teams"))
-{
-  @Html.LabelFor(model => model.Name, "Name:")
-  @Html.TextBoxFor(model => model.Name, new { required = "required" })
-  @Html.HiddenFor(model => model.Wins) 
-  @Html.HiddenFor(model => model.Losses)
-  @Html.HiddenFor(model => model.UserId)
-  
-  <input type="image" img src="https://raw.githubusercontent.com/GarrettHays/images/main/noun-add-258794.png" class = "addicon" style="width:20px;"/>
-}
+  {
+   
+      @Html.LabelFor(model => model.Name, "Name:", new { @class = "navStyle mr-2"})
+      @Html.TextBoxFor(model => model.Name, new { required = "required" })
+      @Html.HiddenFor(model => model.Wins) 
+      @Html.HiddenFor(model => model.Losses)
+      @Html.HiddenFor(model => model.UserId)
+      <div>
+        <input class="xBtn" type="submit"/>
+      </div>
+  }
+</div>

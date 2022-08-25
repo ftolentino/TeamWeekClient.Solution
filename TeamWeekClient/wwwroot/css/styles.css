@@ -102,6 +102,7 @@ div#footer {
   10%  { left:0px; top:0px;}
 }
 
+<<<<<<< HEAD
 .playerWinAnimationTeam1 {
   animation-duration: 2s;
   animation: winner 2s;
@@ -113,6 +114,8 @@ div#footer {
   animation: winner 2s;
 }
 
+=======
+>>>>>>> fb0ed197e5d3a07a470e9f1c33cd6881b0d864e8
 @keyframes winner {
   0%  { top:0px; transform: rotateZ(-108deg);}
   10% { top:0px; transform: rotateZ(-216deg);}
@@ -126,49 +129,6 @@ div#footer {
   90% { top:0px; transform: rotateZ(-1080deg);}
   100% { top:0px; transform: rotateZ(-1188deg);}
 } 
-
-
-
-
-
-
-/* @keyframes example {
-  0%   { left:0px; top:0px;}
-  10%  { left:700px; top:0px;}
-} */
-
-/* 
-/* animation with colors  */
-/* @keyframes example {
-  0%   {background-color:red; left:0px; top:0px;}
-  10%  {background-color:yellow; left:200px; top:0px;}
-} */
-/* @keyframes wiggle {
-  0%, 7% {
-    transform: rotateZ(0);
-  }
-  15% {
-    transform: rotateZ(-15deg);
-  }
-  20% {
-    transform: rotateZ(10deg);
-  }
-  25% {
-    transform: rotateZ(-10deg);
-  }
-  30% {
-    transform: rotateZ(6deg);
-  }
-  35% {
-    transform: rotateZ(-4deg);
-  }
-  40%, 100% {
-    transform: rotateZ(0);
-  }
-}   */
-
-
- 
 
 #header a, a:hover, a:focus, a:active {
 	text-decoration: none;
@@ -192,7 +152,7 @@ div#footer {
   font-family: PhillySans;
   position: absolute;
   z-index: 1;
-  font-size: 50pt;
+  font-size: 10em;
   color: #FF57BE;
   outline-color: #57FF98;
   text-shadow: 15px 15px 0 #000,
@@ -378,8 +338,6 @@ div#footer {
 
 /* HOME INDEX */
 
-
-
 #loginBtn {
   background-color: #777777;
   color: #c0c0c0;
@@ -557,6 +515,25 @@ img.taCardImg {
   background-color: #7057ff;
   color: #ffffff;
   border-color: #ffffff;
+}
+
+.cBtn {
+  background-color: #57FF98;
+  font-family: 'Rubik Wet Paint', cursive;
+  color: #4c5249;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 10px; 
+}
+
+.cBtn:hover {
+  background-color: #7057ff;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.createBtn {
+  text-align: center;
 }
 
 /* Team HUD */
@@ -787,6 +764,7 @@ li {
   50% { background-color: rgb(251, 9, 255);}
   100% { background-color: black;}
 }
+
 
 
 
