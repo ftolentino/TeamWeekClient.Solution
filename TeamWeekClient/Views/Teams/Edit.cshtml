@@ -26,33 +26,43 @@
   <input id="name" name="name" type="text">
   <button type="submit">Go!</button>
 </form>
+
+<p class="teamTitle">Your Clique:</p>
+<div class="row justify-content-center">
 @foreach (Animal animal in ViewBag.Animals)
         {
           @using (Html.BeginForm("DeleteAnimalFromTeam", "Teams", FormMethod.Post))
           {
-            @animal.Name
-            <input id="name" name="animalId" type="hidden" value="@animal.AnimalId">
-            @Html.HiddenFor(model => model.TeamId)
-            <button class="tBtn" type="submit" value="Delete" onclick="myPlay2()">Delete</button>
+            <div class="taCard">
+              <p class="teamName2">@animal.Name</p>
+              <img src="@animal.Image" alt="picture of @animal.Image" class="taCardImg">
+              <input id="name" name="animalId" type="hidden" value="@animal.AnimalId">
+              @Html.HiddenFor(model => model.TeamId)
+              <button class="xBtn" type="submit" value="Delete" onclick="myPlay2()">Delete</button>
+              </div>
             <br>
           }
         }
-
-<p>Animals availabe to add:</p>
+</div>
+<p class="teamTitle">Animals availabe to add:</p>
+<div class="row justify-content-center">
 @foreach (Animal animal in ViewBag.AllAnimals)
         {
           @using (Html.BeginForm("AddAnimalToTeam", "Teams", FormMethod.Post))
           {
-            @animal.Name
-            <img src="@animal.Image" alt="picture of @animal.Image">
-            <input id="name" name="animalId" type="hidden" value="@animal.AnimalId"/>
-            @Html.HiddenFor(model => model.TeamId);
-            <input class="btn" type="submit" value="Add" onclick="myPlay()" />
+            <div class="taCard">
+              <p class="teamName2">@animal.Name</p>
+              <img src="@animal.Image" alt="picture of @animal.Image" class="taCardImg">
+              <input id="name" name="animalId" type="hidden" value="@animal.AnimalId"/>
+              @Html.HiddenFor(model => model.TeamId);
+              <button class="zBtn" type="submit" value="Add" onclick="myPlay()">Add</button>
+            </div>
             <br>
           }
         }
 
-        <div>
-            <audio id="audio" src="~/audio/running.wav"></audio>
-            <audio id="audio2" src="~/audio/ahhhh.wav"></audio>
-          </div>
+</div>
+<div>
+  <audio id="audio" src="~/audio/running.wav"></audio>
+  <audio id="audio2" src="~/audio/ahhhh.wav"></audio>
+</div>
