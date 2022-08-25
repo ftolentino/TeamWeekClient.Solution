@@ -1,21 +1,32 @@
+@model TeamWeekClient.Models.Team;
+
 @{
-    ViewData["Title"] = "Home Page";
+  Layout = "_Layout";
 }
+     
+  <h1 class="teamName">@Model.Name Info:</h1>
+  <p class="kd">@Model.Wins W ----- @Model.Losses L</p>
+<div class="row justify-content-center">
+@foreach (Animal animal in ViewBag.Animals)
+        {
+          <div class="taCard">
+            <p class="teamName"><a href="/Animals/Details/@(animal.AnimalId)">@animal.Name</a></p>
+            <img src="@animal.Image" alt="picture of @animal.Image">
+            <br>
+          </div>
+        }
+</div>
+<div class="row justify-content-center">
+<p><a href="/Teams/Edit/@(Model.TeamId)" class="tBtn">Edit Team</a></p>
 
-<h1>Teams</h1>
+<p><a href="/Teams" class="tBtn">Return</a></p>
 
-
-
-<ol>
-@foreach (Team team in Model)
-{
-    <ul>
-        <li>TeamId: @team.TeamId</li>
-        <li>UserId: @team.UserId</li>
-        <li>Wins: @team.Wins</li>
-        <li>Losses: @team.Losses</li>
-    </ul>
-    <a href="/Teams/Details/@(team.TeamId)"><p>View Team</p></a>
-    <br>
-}
-</ol>
+<p><a href="/Teams/Delete/@(Model.TeamId)" class="tBtn">Delete</a></p>
+</div>
+<div class="row justify-content-center">
+<br>
+<br>
+<p><a href="/Plays/Index/@(Model.TeamId)" class="bBtn">Battle! :O</a></p>
+<div>
+</div>
+</div>

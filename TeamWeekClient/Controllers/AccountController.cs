@@ -1,6 +1,3 @@
-
-
-
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,9 +7,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Microsoft.AspNetCore.Mvc;
 using TeamWeekClient.Models;
-
-
-
 
 namespace TeamWeekClient.Controllers
 {
@@ -66,12 +60,12 @@ namespace TeamWeekClient.Controllers
       var response = await AppUser.Login(appUser);
       TokenResponse tr = JsonConvert.DeserializeObject<TokenResponse>(response);
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response);
-      AppUser.Token = ((string)jsonResponse["token"]);  
+      AppUser.Token = ((string)jsonResponse["token"]); 
       TokenC.Token = tr.Token;
       TokenC.RefreshToken = tr.RefreshToken;
       TokenC.Email = appUser.Email;
       ViewBag.ResultBody = TokenC.Token;
-      return View("Success");
+      return RedirectToAction("Index", "Home");
     }
 
     public ActionResult Register()
@@ -89,6 +83,16 @@ namespace TeamWeekClient.Controllers
       AppUser.RefreshToken = ((string)jsonResponse["refreshtoken"]);
       ViewBag.ResultBody = AppUser.Token;
       return View("Success");
+    }
+
+    public ActionResult Logout()
+    {
+      AppUser.Token = null;
+      AppUser.RefreshToken = null;
+      TokenC.Token = null;
+      TokenC.RefreshToken = null;
+      TokenC.Email = null;
+      return RedirectToAction("Index", "Home");
     }
   }
 }

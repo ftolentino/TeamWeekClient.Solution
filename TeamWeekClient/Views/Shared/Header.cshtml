@@ -1,24 +1,25 @@
 @using TeamWeekClient.Models;
 
+  
 <nav class="navbar sticky-top navbar-expand-lg" style="background-color: rgb(6, 46, 46);">
   <div class="container-fluid">
-    @* <p class="my-2">@Html.ActionLink("Home", "Index", "Home", null, new { @class ="navbar-brand text-light"})</p> *@
+    <p class="my-2 ">@Html.ActionLink("SEUNG LEE's ANIMAL GAUNTLET", "Index", "Home", null, new { @class ="navbar-brand navStyle", @onclick="myPlay3()"})</p>
     
     <div class="navbar-collapse d-flex justify-content-end">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 my-2">
         
       </ul>
     </div>
-    
+
       @if (AppUser.Token != null)
               {
-                  @Html.ActionLink($"{TokenC.Email}", "Index", "Account" )
+                  @Html.ActionLink($"{TokenC.Email}", "Index", "Account", null, new { @class ="navStyle" } )
+                  @Html.ActionLink("Logout", "Logout", "Account", null, new { @class ="logoutStyle ml-3" })
               }
               else
               {
-                  @Html.ActionLink("Register", "Register", "Account", null, new { @class= "mx-2"})
-                  @Html.ActionLink("Log in", "Login", "Account")
+                  @Html.ActionLink("Register", "Register", "Account", null, new { @class ="navStyle" })
+                  @Html.ActionLink("Log in", "Login", "Account", null, new { @class ="logoutStyle ml-3" })
               }
-
   </div>
 </nav>

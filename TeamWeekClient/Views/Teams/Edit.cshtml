@@ -1,0 +1,68 @@
+@{
+  Layout = "_Layout";
+}
+
+@using TeamWeekClient.Models;
+@model TeamWeekClient.Models.Team;
+
+<script type="text/javascript">
+  function myPlay() {
+  var audio = document.getElementById("audio");
+  audio.volume = 0.5;
+  audio.play();
+  
+}
+  function myPlay2() {
+    var audio = document.getElementById("audio2");
+    audio.volume = 0.5;
+    audio.play();
+  }
+</script>
+
+<form action="/Teams/Details/@(Model.TeamId)" method="post">
+  @Html.HiddenFor(model => model.UserId)
+  @Html.HiddenFor(model => model.Wins)
+  @Html.HiddenFor(model => model.Losses)
+  <input id="name" name="name" type="text">
+  <button type="submit">Go!</button>
+</form>
+
+<p class="teamTitle">Your Clique:</p>
+<div class="row justify-content-center">
+@foreach (Animal animal in ViewBag.Animals)
+        {
+          @using (Html.BeginForm("DeleteAnimalFromTeam", "Teams", FormMethod.Post))
+          {
+            <div class="taCard">
+              <p class="teamName2">@animal.Name</p>
+              <img src="@animal.Image" alt="picture of @animal.Image" class="taCardImg">
+              <input id="name" name="animalId" type="hidden" value="@animal.AnimalId">
+              @Html.HiddenFor(model => model.TeamId)
+              <button class="xBtn" type="submit" value="Delete" onclick="myPlay2()">Delete</button>
+              </div>
+            <br>
+          }
+        }
+</div>
+<p class="teamTitle">Animals availabe to add:</p>
+<div class="row justify-content-center">
+@foreach (Animal animal in ViewBag.AllAnimals)
+        {
+          @using (Html.BeginForm("AddAnimalToTeam", "Teams", FormMethod.Post))
+          {
+            <div class="taCard">
+              <p class="teamName2">@animal.Name</p>
+              <img src="@animal.Image" alt="picture of @animal.Image" class="taCardImg">
+              <input id="name" name="animalId" type="hidden" value="@animal.AnimalId"/>
+              @Html.HiddenFor(model => model.TeamId);
+              <button class="zBtn" type="submit" value="Add" onclick="myPlay()">Add</button>
+            </div>
+            <br>
+          }
+        }
+
+</div>
+<div>
+  <audio id="audio" src="~/audio/running.wav"></audio>
+  <audio id="audio2" src="~/audio/ahhhh.wav"></audio>
+</div>
