@@ -10,10 +10,16 @@ namespace TeamWeekClient.Controllers
 {
   public class PlaysController : Controller
   {
+    private static Battle _battle;
     public IActionResult Index(int id)
     {
-      var battle = Team.Battle(id);
-      return View(battle);
+      _battle = Team.Battle(id);
+      return View(_battle);
+    }
+
+    public IActionResult Winner()
+    {
+      return View(_battle);
     }
   }
 }

@@ -64,7 +64,6 @@ namespace TeamWeekClient.Models
       var apiCallTask = ApiHelper.DeleteTeam(id);
     }
 
-
     public static Team PostAnimalToTeam(int teamId, int animalId)
     {
       var apiCallTask = ApiHelper.PostAnimalToTeam(teamId, animalId);
