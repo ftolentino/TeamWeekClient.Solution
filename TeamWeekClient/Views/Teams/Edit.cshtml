@@ -18,14 +18,15 @@
     audio.play();
   }
 </script>
-
-<form action="/Teams/Details/@(Model.TeamId)" method="post">
-  @Html.HiddenFor(model => model.UserId)
-  @Html.HiddenFor(model => model.Wins)
-  @Html.HiddenFor(model => model.Losses)
-  <input id="name" name="name" type="text">
-  <button type="submit">Go!</button>
-</form>
+<div class="container d-flex flex-row justify-content-center">
+  <form action="/Teams/Details/@(Model.TeamId)" method="post">
+    @Html.HiddenFor(model => model.UserId)
+    @Html.HiddenFor(model => model.Wins)
+    @Html.HiddenFor(model => model.Losses)
+    <input id="name" name="name" type="text">
+    <button type="submit">Go!</button>
+  </form>
+</div>
 
 <p class="teamTitle">Your Clique:</p>
 <div class="row justify-content-center">
@@ -44,6 +45,9 @@
           }
         }
 </div>
+
+<p class="teamName"><a href="/Teams/Details/@(Model.TeamId)">Save Team</a></p>
+
 <p class="teamTitle">Animals availabe to add:</p>
 <div class="row justify-content-center">
 @foreach (Animal animal in ViewBag.AllAnimals)
