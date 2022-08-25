@@ -1,16 +1,24 @@
 @{
   Layout = "_Layout";
 }
-<p>hello</p>
+
+<div class="container d-flex justify-content-center">
 <form action="/Account/Register" method="post">
-
-  <label for="name">Name</label>
-  <input id="name" name="name" type="text">
-  <label for="email">Email</label>
-  <input id="email" name="email" type="text">
-  <label for="password">Password</label>
-  <input id="password" name="password" type="text">
-  <button type="submit">Go!</button>
+  <div class="justify-content-center">
+    <label class="navStyle mr-2 for="name">Name</label>
+    <input id="name" name="name" type="text">
+  </div>
+  <div class="justify-content-center">
+    <label class="navStyle mr-2" for="email">Email</label>
+    <input id="email" name="email" type="text">
+  </div>
+  <div class="justify-content-center">
+    <label class="navStyle mr-2 for="password">Password</label>
+    <input id="password" name="password" type="text">
+  </div>
+  <div class="justify-content-center">
+    <button class="xBtn" type="submit">Register</button>
+  </div>
 </form>
+</div>
 
-<p>@ViewBag.ResultBody</p>
