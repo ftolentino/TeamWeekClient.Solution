@@ -4,15 +4,15 @@
 
 @model AppUser
 
-@using(Html.BeginForm("Login", "Account")){
-@Html.LabelFor(m => m.Email);
-@Html.TextBoxFor(m => m.Email);
-@Html.LabelFor(m => m.Password);
-@Html.PasswordFor(m => m.Password);
-<input type="submit" value="submit"/>
+@using (Html.BeginForm("Login", "Account"))
+{
+  @Html.LabelFor(m => m.Email)
+  @Html.TextBoxFor(m => m.Email)
+  @Html.LabelFor(m => m.Password)
+  @Html.PasswordFor(m => m.Password)
+
+  <input type="submit" value="submit" />
 }
-
-
 
 
 @* <form action="/Account/Login" method="post">
@@ -21,4 +21,4 @@
   <label for="password">Password</label>
   <input id="password" name="password" type="text">
   <button type="submit">Go!</button>
-</form> *@
+  </form> *@

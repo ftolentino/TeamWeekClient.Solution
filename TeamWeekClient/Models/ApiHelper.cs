@@ -14,17 +14,17 @@ namespace TeamWeekClient.Models
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
       RestRequest request = new RestRequest($"animals", Method.GET);
       request.AddHeader("Content-Type", "application/json");
-      request.AddHeader("Authorization", "Bearer " + AppUser.Token);
+      // request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
-  
+
     public static async Task<string> GetAnimal(int id)
     {
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
       RestRequest request = new RestRequest($"animals/{id}", Method.GET);
       request.AddHeader("Content-Type", "application/json");
-      request.AddHeader("Authorization", "Bearer " + AppUser.Token);
+      // request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
@@ -36,19 +36,16 @@ namespace TeamWeekClient.Models
       request.AddHeader("Content-Type", "application/json");
       request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       var response = await client.ExecuteTaskAsync(request);
+      if (response.StatusCode == HttpStatusCode.Unauthorized)
+      {
+        if (await RefreshToken())
+        {
+          await GetTeamAnimals(tId);
+        }
+      }
       return response.Content;
     }
 
-    public static async Task<string> GetAllTeams()
-    {
-      RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
-      RestRequest request = new RestRequest($"teams", Method.GET);
-      request.AddHeader("Content-Type", "application/json");
-      request.AddHeader("Authorization", "Bearer " + AppUser.Token);
-      var response = await client.ExecuteTaskAsync(request);
-      return response.Content;
-    }
-  
     public static async Task<string> GetTeam(int id)
     {
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
@@ -56,6 +53,13 @@ namespace TeamWeekClient.Models
       request.AddHeader("Content-Type", "application/json");
       request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       var response = await client.ExecuteTaskAsync(request);
+      if (response.StatusCode == HttpStatusCode.Unauthorized)
+      {
+        if (await RefreshToken())
+        {
+          await GetTeam(id);
+        }
+      }
       return response.Content;
     }
 
@@ -66,24 +70,31 @@ namespace TeamWeekClient.Models
       request.AddHeader("Content-Type", "application/json");
       request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       var response = await client.ExecuteTaskAsync(request);
+      if (response.StatusCode == HttpStatusCode.Unauthorized)
+      {
+        if (await RefreshToken())
+        {
+          await GetUserTeam(id);
+        }
+      }
       return response.Content;
     }
 
-    public static async Task PostTeam (string newTeam)
+    public static async Task PostTeam(string newTeam)
     {
       RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
       RestRequest request = new RestRequest($"teams", Method.POST);
       request.AddHeader("Content-Type", "application/json");
       request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       request.AddJsonBody(newTeam);
-      var response = await client.ExecuteTaskAsync(request); 
+      var response = await client.ExecuteTaskAsync(request);
       if (response.StatusCode == HttpStatusCode.Unauthorized)
       {
         if (await RefreshToken())
         {
           await PostTeam(newTeam);
         }
-      }  
+      }
     }
 
     public static async Task<string> PostAnimalToTeam(int teamId, int animalId)
@@ -93,6 +104,13 @@ namespace TeamWeekClient.Models
       request.AddHeader("Content-Type", "application/json");
       request.AddHeader("Authorization", "Bearer " + AppUser.Token);
       var response = await client.ExecuteTaskAsync(request);
+      if (response.StatusCode == HttpStatusCode.Unauthorized)
+      {
+        if (await RefreshToken())
+        {
+          await PostAnimalToTeam(teamId, animalId);
+        }
+      }
       return response.Content;
     }
 
@@ -110,8 +128,8 @@ namespace TeamWeekClient.Models
         {
           await PutTeam(id, newTeam);
         }
+      }
     }
-  }
     public static async Task DeleteTeam(int id)
     {
 
@@ -149,6 +167,13 @@ namespace TeamWeekClient.Models
       request.AddHeader("Content-Type", "application/json");
       request.AddHeader("Authorization", "Bearer " + TokenC.Token);
       var response = await client.ExecuteTaskAsync(request);
+      if (response.StatusCode == HttpStatusCode.Unauthorized)
+      {
+        if (await RefreshToken())
+        {
+          await GetBattleResult(id);
+        }
+      }
       return response.Content;
     }
 
@@ -158,6 +183,13 @@ namespace TeamWeekClient.Models
       RestRequest request = new RestRequest($"animalteams/{id}", Method.GET);
       request.AddHeader("Authorization", "Bearer " + TokenC.Token);
       var response = await client.ExecuteTaskAsync(request);
+      if (response.StatusCode == HttpStatusCode.Unauthorized)
+      {
+        if (await RefreshToken())
+        {
+          await GetAnimalTeams(id);
+        }
+      }
       return response.Content;
     }
 
@@ -169,6 +201,13 @@ namespace TeamWeekClient.Models
       request.AddHeader("Content-Type", "application/json");
       request.AddHeader("Authorization", "Bearer " + TokenC.Token);
       var response = await client.ExecuteTaskAsync(request);
+      if (response.StatusCode == HttpStatusCode.Unauthorized)
+      {
+        if (await RefreshToken())
+        {
+          await DeleteAnimalTeam(teamId, animalId);
+        }
+      }
       return response.Content;
     }
   }
