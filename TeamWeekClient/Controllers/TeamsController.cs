@@ -59,6 +59,8 @@ namespace TeamWeekClient.Controllers
     public IActionResult Details(int id)
     {
       var team = Team.GetDetails(id);
+      ViewBag.Animals = Animal.GetTeamAnimals(id);
+      ViewBag.AllAnimals = Animal.GetAnimals();
       return View(team);
     }
 

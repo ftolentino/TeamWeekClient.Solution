@@ -6,19 +6,26 @@
 
 <div class="bgColor">
     <div class="container d-flex flex-column align-items-center">
-        <h1 class="pageTitle text-center">WINNER!</h1>
+        @if(Model.outcome == 1)
+                {
+                    <h1 class="pageTitle2 text-center">WINNER!</h1>
+                }
+        else if(Model.outcome == 2)
+                {
+                    <h1 class="pageTitle2 text-center">YOU LOST</h1>
+                }
         <div class="d-flex flex-column align-items-center">
             <div class="container d-flex flex-row justify-content-center">
                 @if(Model.outcome == 1)
                 {
-                    <p class="outcome">@Model.team1.name win!</p>
+                    <p class="outcome">@Model.team1.name wins!</p>
                 }
                 else if(Model.outcome == 2)
                 {
-                    <p class="outcome">@Model.team2.name win!</p>
+                    <p class="outcome">@Model.team2.name wins!</p>
                 }
             </div>
-            @Html.ActionLink("PLAY AGAIN", "Index", "Teams", null, new { @class="btn-lg btn-danger my-3"})
+            @Html.ActionLink("PLAY AGAIN", "Index", "Teams", null, new { @class="outcome2"})
         </div>
         <div class="gameScreen">
                     <div class="d-flex flex-row justify-content-between">

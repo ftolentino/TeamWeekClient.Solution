@@ -5,8 +5,21 @@
 @using TeamWeekClient.Models;
 @model TeamWeekClient.Models.Team;
 
+<script type="text/javascript">
+  function myPlay() {
+  var audio = document.getElementById("audio");
+  audio.volume = 0.5;
+  audio.play();
+  
+}
+  function myPlay2() {
+    var audio = document.getElementById("audio2");
+    audio.volume = 0.5;
+    audio.play();
+  }
+</script>
+
 <form action="/Teams/Details/@(Model.TeamId)" method="post">
-@* <input type="hidden"  *@
   @Html.HiddenFor(model => model.UserId)
   @Html.HiddenFor(model => model.Wins)
   @Html.HiddenFor(model => model.Losses)
@@ -20,7 +33,7 @@
             @animal.Name
             <input id="name" name="animalId" type="hidden" value="@animal.AnimalId">
             @Html.HiddenFor(model => model.TeamId)
-            <input class="btn" type="submit" value="Delete" />
+            <button class="tBtn" type="submit" value="Delete" onclick="myPlay2()">Delete</button>
             <br>
           }
         }
@@ -31,9 +44,15 @@
           @using (Html.BeginForm("AddAnimalToTeam", "Teams", FormMethod.Post))
           {
             @animal.Name
+            <img src="@animal.Image" alt="picture of @animal.Image">
             <input id="name" name="animalId" type="hidden" value="@animal.AnimalId"/>
             @Html.HiddenFor(model => model.TeamId);
-            <input class="btn" type="submit" value="Add" />
+            <input class="btn" type="submit" value="Add" onclick="myPlay()" />
             <br>
           }
         }
+
+        <div>
+            <audio id="audio" src="~/audio/running.wav"></audio>
+            <audio id="audio2" src="~/audio/ahhhh.wav"></audio>
+          </div>

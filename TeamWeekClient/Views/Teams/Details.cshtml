@@ -3,19 +3,28 @@
 @{
   Layout = "_Layout";
 }
+  <h1 class="teamName">@Model.Name Info:</h1>
+  <p class="kd">@Model.Wins W ----- @Model.Losses L</p>
+<div class="row justify-content-center">
+@foreach (Animal animal in ViewBag.Animals)
+        {
+          <div class="taCard">
+            <p class="teamName"><a href="/Animals/Details/@(animal.AnimalId)">@animal.Name</a></p>
+            <img src="@animal.Image" alt="picture of @animal.Image">
+            <br>
+          </div>
+        }
+</div>
+<div class="row justify-content-center">
+<p><a href="/Teams/Edit/@(Model.TeamId)" class="tBtn">Edit Team</a></p>
 
-<h1>Team Info:</h1>
-<ul>
-  <li>Name: @Model.Name</li>
-  <li>UserId: @Model.UserId</li>
-  <li>Wins: @Model.Wins</li>
-  <li>Losses: @Model.Losses</li>
-</ul>
+<p><a href="/Teams" class="tBtn">Return</a></p>
+
+<p><a href="/Teams/Delete/@(Model.TeamId)" class="tBtn">Delete</a></p>
+</div>
+<div class="row justify-content-center">
 <br>
-
-<a href="/Teams/Edit/@(Model.TeamId)"><p>Edit Team Name</p></a>
 <br>
-<a href="/Teams"><p>Return</p></a>
+<p><a href="/Plays/Index/@(Model.TeamId)" class="bBtn">Battle! :O</a></p>
 
-<a href="/Teams/Delete/@(Model.TeamId)"><p>Delete Team</p></a>
-<a href="/Plays/Index/@(Model.TeamId)"><p>Battle! :O</p></a>
+</div>

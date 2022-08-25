@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
-@import url('../font/PhillySans.otf');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&family=Rubik+Wet+Paint&display=swap');
+@font-face {
+  font-family: Automania;
+  src: url("../font/AUTOMANI.TTF");
+}
 @font-face {
   font-family: PhillySans;
   src: url('../font/PhillySans.otf');
@@ -8,6 +12,11 @@
   font-family: AxiMosi;
   src: url('../font/aAksiMosi.otf');
 }
+@font-face {
+  font-family: COD;
+  src: url('../font/Call\ of\ Ops\ Duty.otf');
+}
+
 
 html {
   font-size: 14px;
@@ -23,6 +32,7 @@ html {
 html {
   margin: 0px;
   padding: 0px;
+  overflow-x: hidden;
   box-sizing: border-box;
   position: relative;
   min-height: 100%;
@@ -212,8 +222,8 @@ div#footer {
   position: absolute;
   width: 1200px;
   max-width: 1000px;
-  height: 560px;
-  top: 400px;
+  height: 900px;
+  top: 40px;
   margin: 50px auto;
 }
 /* Fonts */
@@ -229,6 +239,40 @@ div#footer {
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+
+.teamName {
+  font-family: PhillySans;
+  text-align: center;
+  font-size: 50pt;
+  color: #FF57BE;
+  outline-color: #57FF98;
+  text-shadow: 15px 15px 0 #000,
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.teamName a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.teamName:hover {
+  color:#BEFF57;
+  outline-color: #FF57BE;
+  text-shadow: 1px 1px #FF57BE,
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.kd {
+  font-family: COD;
+  font-size: 20px;
+  text-align: center;
 }
 
 .navStyle {
@@ -275,9 +319,11 @@ div#footer {
   1px 1px 0 #000;
 }
 
-.outcome{
+.outcome {
   font-family: PhillySans;
   font-size: 4rem;
+  z-index: 3;
+  top: 0px;
   color: #FF57BE;
   text-shadow:
     3px 3px 0 #11e6df,
@@ -287,9 +333,39 @@ div#footer {
     1px 1px 0 #11e6df;
 }
 
-.pageTitle{
+.outcome2 {
+  font-family: PhillySans;
+  font-size: 4rem;
+  z-index: 3;
+  
+  color: #FF57BE;
+  text-shadow:
+    3px 3px 0 #11e6df,
+    -1px -1px 0 #11e6df,  
+    1px -1px 0 #11e6df,
+    -1px 1px 0 #11e6df,
+    1px 1px 0 #11e6df;
+}
+
+.pageTitle {
   font-family: AxiMosi;
-  font-size: 10rem;
+  z-index: 2;
+  font-size: 60pt;
+  margin-top: 300px;
+  color: #57FF98;
+  text-shadow:
+    3px 3px 0 #FF57BE,
+    -1px -1px 0 #FF57BE,  
+    1px -1px 0 #FF57BE,
+    -1px 1px 0 #FF57BE,
+    1px 1px 0 #FF57BE;
+}
+
+.pageTitle2 {
+  font-family: AxiMosi;
+  z-index: 2;
+  font-size: 60pt;
+  margin-top: 200px;
   color: #57FF98;
   text-shadow:
     3px 3px 0 #FF57BE,
@@ -370,6 +446,48 @@ div#footer {
 .cardHp {
   float: right;
   margin-right: 10px;
+}
+/* Team Index */
+.tCard {
+  margin: 20px;
+  padding: 10px;
+}
+
+.teamTitle {
+  font-family: 'Rubik Burned', cursive;
+  margin-top: 20px;
+  text-align: center;
+  color: #ade611;
+  font-size: 90px;
+}
+
+.taCard {
+  margin: 20px;
+  padding: 10px;
+}
+
+.tBtn {
+  font-family: 'Rubik Wet Paint', cursive;
+  font-size: 15pt;
+  background-color: #57FF98;
+  color: #000000;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  width: auto;
+  height: 20px;
+}
+
+.bBtn {
+  background-color: #FF57BE;
+  font-family: 'Rubik Wet Paint', cursive;
+  color: #4c5249;
+  font-size: 30px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  width: auto;
+  height: 20px;
 }
 
 /* Team HUD */
@@ -452,5 +570,158 @@ div#footer {
 li {
   list-style: none;
 }
+
+
+
+
+.bgColor {
+  overflow: hidden;
+  position: relative;
+  background-color: #5b7142;
+  width: 100vw;
+  height: 100vh;
+}
+
+.homeBg {
+  overflow: hidden;
+  height: 92vh;
+  justify-content: center;
+  display: flex;
+  background-color: #11e6df;
+}
+
+.cardBg {
+  background-color: #11e6df;
+  top: -10px;
+  height: 92vh;
+}
+
+.alley {
+  background-image: url(../img/slagBackground1.png);
+  background-attachment: center;
+  background-repeat: no-repeat;
+  background-size: 1000px;
+  position: absolute;
+  width: 1000px;
+  max-width: 1000px;
+  height: 560px;
+  top: 125px;
+  margin: 0px auto;
+}
+
+#packBtn {
+  font-family: 'Rubik Burned', cursive;
+  color: #7c7b74;
+  position: absolute;
+  right: 105px;
+  bottom: -2px;
+  padding: 25px;
+}
+
+#packBtn:hover {
+  background-color: rgba(255, 255, 255, 0.288);
+  color: #000000;
+}
+
+#uBtn {
+  font-family: 'Rubik Burned', cursive;
+  position: absolute;
+  color: #4c5249;
+  left: -10px;
+  bottom: 185px;
+  padding: 0px;
+  padding-left: 120px;
+  padding-right: 120px;
+  rotate: -22deg;
+}
+
+#uBtn:hover {
+  /* route is not in API */
+  cursor: default;
+}
+
+#pBtn {
+  font-family: 'Rubik Burned', cursive;
+  font-size: 20pt;
+  color: #464646;
+  position: absolute;
+  right: 382px;
+  bottom: 103px;
+  padding: 8px;
+  padding-left: 57px;
+  padding-right: 57px;
+  border-radius: 100%;
+}
+
+#pBtn:hover {
+  background-color: rgba(255, 255, 255, 0.288);
+  color: #000000;
+}
+#pSign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border: 2px solid black;
+  width: 82px;
+  height: 170px;
+  left: 365px;
+  top: 92px;
+}
+
+.signLetter {
+  padding: 10px 0;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+
+.signLetter p {
+  z-index: -10;
+  display: block;
+  font-family: Automania;
+  margin-top: 19px;
+  font-size: 30pt;
+  line-height: 10px;
+  animation: neon 2s infinite;
+}
+
+.signLetter p:hover {
+  cursor: default;
+}
+
+@keyframes neon {
+  0% { text-shadow: 0px 0px 0px rgba(198, 9, 255, 0); color: #000000;}
+  50% { text-shadow: 0px 0px 0px rgb(251, 9, 255), 10px 10px 4px #000000; color: #00000000;}
+  100% { text-shadow: 0px 0px 0px rgba(198, 9, 255, 0); color: #000000;}
+}
+
+.downArrowP {
+  position: absolute;
+  left: 355px;
+  top: 98px;
+  animation: neonArrow 2s infinite;
+}
+
+.downArrowClip {
+	width: 100px;
+	height: 160px;
+	margin: 0 auto;
+	background-color: rgb(0, 0, 0);
+  clip-path: polygon(30% 0%, 69% 0, 70% 51%, 89% 53%, 50% 100%, 11% 53%, 30% 51%, 31% 8%, 36% 5%, 36% 54%, 19% 56%, 50% 93%, 81% 56%, 64% 56%, 64% 5%, 30% 5%);
+  animation: arrowColor 2s infinite;
+}
+
+@keyframes neonArrow {
+  0% { filter: drop-shadow(0px 0px 0px rgba(0, 30, 200, 0));}
+  50% { filter: drop-shadow(10px 10px 4px #000000);}
+  100% { filter: drop-shadow(0.4rem 0.4rem 1rem rgba(0, 30, 200, 0));}
+}
+
+@keyframes arrowColor {
+  0% { background-color: black;}
+  50% { background-color: rgb(251, 9, 255);}
+  100% { background-color: black;}
+}
+
 
 

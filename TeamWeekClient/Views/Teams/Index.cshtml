@@ -3,18 +3,16 @@
 Layout = "_Layout";
 }
 
-<h1>Your Team</h1>
+<h1 class="teamTitle">Your Teams</h1>
+<div class="row justify-content-center">
 
-<ol>
 @foreach (Team t in Model)
 {
-    <ul>
-        <li>Name: @t.Name</li>
-        <li>UserId: @t.UserId</li>
-        <li>Wins: @t.Wins</li>
-        <li>Losses: @t.Losses</li>
-    </ul>
-    <a href="/Teams/Details/@(t.TeamId)"><p>View Team</p></a>
+    <div class="tCard">
+        <p class="teamName"><a href="/Teams/Details/@(t.TeamId)">@t.Name</a></p>
+       
+        <p class="kd">K/D: @t.Wins / @t.Losses</p>
+    </div>
     <br>
 }
-</ol>
+</div>
