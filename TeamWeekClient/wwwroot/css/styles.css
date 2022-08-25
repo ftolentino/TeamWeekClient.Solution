@@ -417,8 +417,6 @@ div#footer {
 
 /* HOME INDEX */
 
-
-
 #loginBtn {
   background-color: #777777;
   color: #c0c0c0;
@@ -560,6 +558,25 @@ img.taCardImg {
   background-color: #7057ff;
   color: #ffffff;
   border-color: #ffffff;
+}
+
+.cBtn {
+  background-color: #57FF98;
+  font-family: 'Rubik Wet Paint', cursive;
+  color: #4c5249;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 10px; 
+}
+
+.cBtn:hover {
+  background-color: #7057ff;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.createBtn {
+  text-align: center;
 }
 
 /* Team HUD */
@@ -791,6 +808,7 @@ li {
   50% { background-color: rgb(251, 9, 255);}
   100% { background-color: black;}
 }
+
 
 
 

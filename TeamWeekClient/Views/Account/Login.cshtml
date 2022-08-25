@@ -4,21 +4,17 @@
 
 @model AppUser
 
+<div class="container d-flex justify-content-center">
 @using(Html.BeginForm("Login", "Account")){
-@Html.LabelFor(m => m.Email);
-@Html.TextBoxFor(m => m.Email);
-@Html.LabelFor(m => m.Password);
-@Html.PasswordFor(m => m.Password);
-<input type="submit" value="submit"/>
+<div> 
+  @Html.LabelFor(m => m.Email, new { @class = "navStyle mr-2"});
+  @Html.TextBoxFor(m => m.Email);
+</div> 
+<div>
+  @Html.LabelFor(m => m.Password, new { @class = "navStyle mr-2"});
+  @Html.PasswordFor(m => m.Password);
+</div>
+<input class="xBtn" type="submit" value="submit"/>
 }
+</div>
 
-
-
-
-@* <form action="/Account/Login" method="post">
-  <label for="email">Email</label>
-  <input id="email" name="email" type="text">
-  <label for="password">Password</label>
-  <input id="password" name="password" type="text">
-  <button type="submit">Go!</button>
-</form> *@

@@ -3,6 +3,9 @@
   Layout = "_Layout";
 }
 
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
-<p>You have successfully registered! :D</p>
-<p>@ViewBag.ResultBody</p>
+<div class="container d-flex justify-content-center">
+  <div>
+    <p>@Html.ActionLink("Home", "Index", "Home", null, new { @class="xBtn justify-content-"})</p>
+    <p class="navStyle">You have successfully registered! :D</p>
+  </div>
+</div>
