@@ -1,20 +1,18 @@
-
+@model List<TeamWeekClient.Models.Team>;
 @{
-  Layout = "_Layout";
+Layout = "_Layout";
 }
 
-<h1>Teams</h1>
+<h1 class="teamTitle">Your Teams</h1>
+<div class="row justify-content-center">
 
-<ol>
-@foreach (Team team in Model)
+@foreach (Team t in Model)
 {
-    <ul>
-        <li>TeamId: @team.TeamId</li>
-        <li>UserId: @team.UserId</li>
-        <li>Wins: @team.Wins</li>
-        <li>Losses: @team.Losses</li>
-    </ul>
-    <a href="/Teams/Details/@(team.TeamId)"><p>View Team</p></a>
+    <div class="tCard">
+        <p class="teamName"><a href="/Teams/Details/@(t.TeamId)">@t.Name</a></p>
+       
+        <p class="kd">K/D: @t.Wins / @t.Losses</p>
+    </div>
     <br>
 }
-</ol>
+</div>

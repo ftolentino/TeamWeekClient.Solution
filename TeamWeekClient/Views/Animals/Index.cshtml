@@ -2,23 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-@* 
-<div class="container">
-    <h1 class="text-center pageTitle my-3">Animals</h1>
-    <div class="row justify-content-center">
-        
+<div class="cardBg">
+    <div class="container">
+        <h1 class="text-center pageTitle">Animals</h1>
+        <div class="row justify-content-center">
+            
 
-        @foreach (Animal animal in Model)
-        {
-            <div class="aCard">
-                <a href="/Messages/Details/@(animal.AnimalId)" class="cardName">@animal.Name</a><span class="cardHp">HP: @animal.HP</span>
-                <img src="@animal.Image" alt="image of @animal.Name"> 
-                <li>Type: </li>
-                <li>Abilities: ...to be implemented...</li>
-                <li>Attack: @animal.Attack</li>
-            </div>
-        }
-        
+            @foreach (Animal animal in Model)
+            {
+                <div class="aCard">
+                    <a href="/Messages/Details/@(animal.AnimalId)" class="cardName">@animal.Name</a><span class="cardHp">HP: @animal.HP</span>
+                    <img src="@animal.Image" alt="image of @animal.Name"> 
+                    <li>Type: </li>
+                    <li>Abilities: ...to be implemented...</li>
+                    <li>Attack: @animal.Attack</li>
+                </div>
+            }
+
+        </div>
     </div>
 </div>
-*@ 
+

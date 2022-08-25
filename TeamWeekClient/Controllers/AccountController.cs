@@ -65,7 +65,7 @@ namespace TeamWeekClient.Controllers
       TokenC.RefreshToken = tr.RefreshToken;
       TokenC.Email = appUser.Email;
       ViewBag.ResultBody = TokenC.Token;
-      return View("Success");
+      return RedirectToAction("Index", "Home");
     }
 
     public ActionResult Register()
@@ -83,6 +83,16 @@ namespace TeamWeekClient.Controllers
       AppUser.RefreshToken = ((string)jsonResponse["refreshtoken"]);
       ViewBag.ResultBody = AppUser.Token;
       return View("Success");
+    }
+
+    public ActionResult Logout()
+    {
+      AppUser.Token = null;
+      AppUser.RefreshToken = null;
+      TokenC.Token = null;
+      TokenC.RefreshToken = null;
+      TokenC.Email = null;
+      return RedirectToAction("Index", "Home");
     }
   }
 }
