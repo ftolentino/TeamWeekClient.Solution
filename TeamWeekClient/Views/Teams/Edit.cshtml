@@ -15,24 +15,25 @@
 </form>
 @foreach (Animal animal in ViewBag.Animals)
         {
-          @using (Html.BeginForm())
+          @using (Html.BeginForm("DeleteAnimalFromTeam", "Teams", FormMethod.Post))
           {
-                @animal.Name
-                <input class="btn" type="submit" value="Delete" />
+            @animal.Name
+            <input id="name" name="animalId" type="hidden" value="@animal.AnimalId">
+            @Html.HiddenFor(model => model.TeamId)
+            <input class="btn" type="submit" value="Delete" />
+            <br>
           }
         }
 
 <p>Animals availabe to add:</p>
- @foreach (Animal animal in ViewBag.AllAnimals)
+@foreach (Animal animal in ViewBag.AllAnimals)
         {
           @using (Html.BeginForm("AddAnimalToTeam", "Teams", FormMethod.Post))
           {
             @animal.Name
-            @animal.AnimalId
-            <input id="name" name="animalId" type="hidden" value="@animal.AnimalId">
-            @Html.HiddenFor(model => model.TeamId)
+            <input id="name" name="animalId" type="hidden" value="@animal.AnimalId"/>
+            @Html.HiddenFor(model => model.TeamId);
             <input class="btn" type="submit" value="Add" />
             <br>
           }
-        } 
-
+        }

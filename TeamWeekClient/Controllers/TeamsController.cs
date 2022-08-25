@@ -80,7 +80,14 @@ namespace TeamWeekClient.Controllers
     public IActionResult AddAnimalToTeam(int teamId, int animalId)
     {
       Team.PostAnimalToTeam(teamId, animalId);
-      return RedirectToAction("Edit");
+      return RedirectToAction("Edit", new { id = teamId});
+    }
+
+    [HttpPost]
+    public IActionResult DeleteAnimalFromTeam(int teamId, int animalId)
+    {
+      Team.DeleteAnimalFromTeam(teamId, animalId);
+      return RedirectToAction("Edit", new { id = teamId});
     }
   }
 }

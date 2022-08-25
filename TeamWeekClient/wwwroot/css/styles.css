@@ -231,6 +231,50 @@ div#footer {
     1px 1px 0 #000;
 }
 
+.navStyle {
+  font-family: PhillySans;
+  font-size: 20pt;
+  color: #FF57BE;
+  outline-color: #57FF98;
+  text-shadow: 1px 1px #57FF98,
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.navStyle:hover {
+  color:#BEFF57;
+  outline-color: #FF57BE;
+  text-shadow: 1px 1px #FF57BE,
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.logoutStyle {
+  font-family: PhillySans;
+  font-size: 20pt;
+  color: #57FF98;
+  outline-color: #FF57BE;
+  text-shadow: 1px 1px #FF57BE,
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.logoutStyle:hover {
+  color:#FF57BE;
+  outline-color: #BEFF57;
+  text-shadow: 1px 1px #BEFF57,
+  -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
 .outcome{
   font-family: PhillySans;
   font-size: 4rem;

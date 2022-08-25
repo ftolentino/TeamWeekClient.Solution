@@ -151,5 +151,25 @@ namespace TeamWeekClient.Models
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
+
+    public static async Task<string> GetAnimalTeams(int id)
+    {
+      RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
+      RestRequest request = new RestRequest($"animalteams/{id}", Method.GET);
+      request.AddHeader("Authorization", "Bearer " + TokenC.Token);
+      var response = await client.ExecuteTaskAsync(request);
+      return response.Content;
+    }
+
+    public static async Task<string> DeleteAnimalTeam(int teamId, int animalId)
+    {
+      // eventually need to also pass in UserId to confirm that they can delete it
+      RestClient client = new RestClient("https://slagapi.azurewebsites.net/api");
+      RestRequest request = new RestRequest($"teams/{teamId}/{animalId}", Method.DELETE);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddHeader("Authorization", "Bearer " + TokenC.Token);
+      var response = await client.ExecuteTaskAsync(request);
+      return response.Content;
+    }
   }
 }
