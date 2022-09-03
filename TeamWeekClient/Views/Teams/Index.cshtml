@@ -11,8 +11,13 @@ Layout = "_Layout";
     <div class="tCard">
         <p class="teamName"><a href="/Teams/Details/@(t.TeamId)">@t.Name</a></p>
        
-        <p class="kd">K/D: @t.Wins / @t.Losses</p>
+        <p class="kd">@t.Wins /// @t.Losses</p>
     </div>
     <br>
 }
+<br>
+
+</div>
+<div class="createBtn">
+    <p><a href="/Teams/Create" class="cBtn">Add new team</a></p>
 </div>
