@@ -13,17 +13,6 @@ namespace TeamWeekClient.Models
     public string Name { get; set; } = default!;
     public int Wins { get; set; }
     public int Losses { get; set; }
-    
-    public static List<Team> GetTeams()
-    {
-      var apiCallTask = ApiHelper.GetAllTeams();
-      var result = apiCallTask.Result;
-
-      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-      List<Team> teamList = JsonConvert.DeserializeObject<List<Team>>(jsonResponse.ToString());
-
-      return teamList;
-    }
 
     public static List<Team> GetUserTeams(string id)
     {
@@ -42,7 +31,7 @@ namespace TeamWeekClient.Models
       var result = apiCallTask.Result;
 
       JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      Team team  = JsonConvert.DeserializeObject<Team>(jsonResponse.ToString());
+      Team team = JsonConvert.DeserializeObject<Team>(jsonResponse.ToString());
 
       return team;
     }
@@ -78,9 +67,8 @@ namespace TeamWeekClient.Models
     public static void DeleteAnimalFromTeam(int teamId, int animalId)
     {
       var apiCallTask = ApiHelper.DeleteAnimalTeam(teamId, animalId);
-      
     }
-    
+
     public static Battle Battle(int teamId)
     {
       var apiCallTask = ApiHelper.GetBattleResult(teamId);
@@ -90,6 +78,5 @@ namespace TeamWeekClient.Models
       Battle battle = JsonConvert.DeserializeObject<Battle>(jsonResponse.ToString());
       return battle;
     }
-
   }
 }

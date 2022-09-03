@@ -7,8 +7,9 @@
 <h2 class="text-center pageTitle">LOGIN</h2>
 <div class="container">
   <div class="row justify-content-center">
-      <div style="margin: 20em 0px" class="d-flex flex-col align-items-center">
-        @using(Html.BeginForm("Login", "Account")){
+    <div style="margin: 20em 0px" class="d-flex flex-col align-items-center">
+      @using (Html.BeginForm("Login", "Account"))
+      {
         <div class="d-flex flex-column align-items-center">
           <div>
             @Html.LabelFor(m => m.Email, new { @class="mx-2", @style="font-family: AxiMosi" })
@@ -18,10 +19,9 @@
             @Html.LabelFor(m => m.Password, new { @class="mx-2 rounded", @style="font-family: AxiMosi" })
             @Html.PasswordFor(m => m.Password, new { @class="mx-2 rounded" })
           </div>
-          <input type="submit" value="SUBMIT" class="btn btn-success my-4"/>
+          <input type="submit" value="SUBMIT" class="btn btn-success my-4" />
         </div>
-        }
-      </div>
+      }
+    </div>
   </div>
 </div>
-
